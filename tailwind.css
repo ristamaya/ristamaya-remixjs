@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---> THEME <--- */
+@layer base {
+  :root {
+    --color-fill: 99, 102, 241;
+    --color-muted: 224, 231, 255;
+    --color-inverted: 248, 250, 252;
+    --color-border-base: 129, 140, 248;
+    --color-border-warning: 244, 63, 94;
+    --color-text-base: 68, 64, 60;
+    --color-text-strong: 28, 25, 23;
+    --color-text-muted: 199, 210, 254;
+    --color-text-inverted: 231, 229, 228;
+    --color-text-warning: 244, 63, 94;
+    --color-btn-base: 99, 102, 241;
+    --color-btn-hover: 238, 242, 255;
+    --color-btn-inverted: 51, 65, 85;
+  }
+  .theme-amber {
+    --color-fill: 245, 158, 11;
+    --color-muted: 254, 243, 199;
+    --color-inverted: 248, 250, 252;
+    --color-border-base: 252, 211, 77;
+    --color-border-warning: 244, 63, 94;
+    --color-text-base: 68, 64, 60;
+    --color-text-strong: 28, 25, 23;
+    --color-text-muted: 199, 210, 254;
+    --color-text-inverted: 231, 229, 228;
+    --color-text-warning: 244, 63, 94;
+    --color-btn-base: 245, 158, 11;
+    --color-btn-hover: 245, 158, 11;
+    --color-btn-inverted: 51, 65, 85;
+  }
+  .theme-sky {
+    --color-fill: 34, 211, 238;
+    --color-muted: 236, 254, 255;
+    --color-inverted: 248, 250, 252;
+    --color-border-base: 103, 232, 249;
+    --color-border-warning: 244, 63, 94;
+    --color-text-base: 68, 64, 60;
+    --color-text-strong: 28, 25, 23;
+    --color-text-muted: 199, 210, 254;
+    --color-text-warning: 244, 63, 94;
+    --color-text-inverted: 231, 229, 228;
+    --color-btn-base: 34, 211, 238;
+    --color-btn-hover: 238, 242, 255;
+    --color-btn-inverted: 99, 102, 241;
+  }
+  .theme-slate {
+    --color-fill: 51, 65, 85;
+    --color-muted: 148, 163, 184;
+    --color-inverted: 248, 250, 252;
+    --color-border-base: 100, 116, 139;
+    --color-border-warning: 244, 63, 94;
+    --color-text-base: 203, 213, 225;
+    --color-text-strong: 248, 250, 252;
+    --color-text-muted: 226, 232, 240;
+    --color-text-inverted: 168, 162, 158;
+    --color-text-warning: 244, 63, 94;
+    --color-btn-base: 51, 65, 85;
+    --color-btn-hover: 238, 242, 255;
+    --color-btn-inverted: 99, 102, 241;
+  }
+  .theme-stone {
+    --color-fill: 87, 83, 78;
+    --color-muted: 168, 162, 158;
+    --color-inverted: 248, 250, 252;
+    --color-border-base: 100, 116, 139;
+    --color-border-warning: 244, 63, 94;
+    --color-text-base: 203, 213, 225;
+    --color-text-strong: 248, 250, 252;
+    --color-text-muted: 226, 232, 240;
+    --color-text-inverted: 148, 163, 184;
+    --color-text-warning: 244, 63, 94;
+    --color-btn-base: 87, 83, 78;
+    --color-btn-hover: 87, 83, 78;
+    --color-btn-inverted: 99, 102, 241;
+  }
+}
+/* ---> THEME <--- */
+
+/* --->Scroll Bar<--- */
+#SideBar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+#SideBar::-webkit-scrollbar-track {
+  background-color: rgba(229, 231, 235, var(--bg-opacity));
+}
+#SideBar::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: #747c81;
+}
+
+#MenuBar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+#MenuBar::-webkit-scrollbar-track {
+  background-color: rgba(229, 231, 235, var(--bg-opacity));
+}
+#MenuBar::-webkit-scrollbar-thumb {
+  border-radius: 1px;
+  background-color: #747c81;
+}
+
+#IconMenus::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+#IconMenus::-webkit-scrollbar-track {
+  background-color: rgba(229, 231, 235, var(--bg-opacity));
+}
+#IconMenus::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: #747c81;
+}
+
+#MainContent::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+#MainContent::-webkit-scrollbar-track {
+  background-color: rgba(229, 231, 235, var(--bg-opacity));
+}
+#MainContent::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #747c81;
+}
+/* --->Scroll Bar<--- */

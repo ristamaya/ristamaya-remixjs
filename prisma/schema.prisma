@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+
+model users {
+  userid       String   @id @default(auto()) @map("_id") @db.ObjectId
+  useremail    String
+  userpassword String
+  userstatus   String
+  maxsession   BigInt
+  createby     String
+  createat     DateTime @updatedAt
+  updateat     DateTime @updatedAt
+}
+
+model menus {
+  menuid   String @id @default(auto()) @map("_id") @db.ObjectId
+  createby String
+  group    String
+  icon     String
+  parent   String
+  path     String
+  pathtype String
+  status   String
+  title    String
+  type     String
+}
+
+model ristamaya {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+}
+
+model visitors {
+  visitorid    String   @id @default(auto()) @map("_id") @db.ObjectId
+  IPv4         String?
+  city         String?
+  country_code String?
+  country_name String?
+  latitude     String?
+  longitude    String?
+  postal       String?
+  state        String?
+  visitat      DateTime @default(now())
+}
