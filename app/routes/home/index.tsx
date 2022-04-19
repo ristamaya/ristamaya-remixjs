@@ -83,9 +83,11 @@ export default function Home() {
       </div>
 
       <div className="my-5 flex h-fit w-full items-center justify-center px-8">
-        <div className="block w-full items-center justify-center rounded-md bg-theme-muted px-4 py-2 shadow-md sm:w-fit">
-          <h1 className="mb-2 text-xl font-bold text-theme-base sm:text-3xl">Contact</h1>
-          <div className="block">
+        <div className="block w-full rounded-md bg-theme-muted px-4 py-2 shadow-md sm:w-fit">
+          <h1 className="mb-5 text-center text-xl font-semibold text-theme-base sm:text-3xl ">
+            Contact
+          </h1>
+          <div className="my-4 block items-center justify-center">
             <Form>
               <Input className="w-full" label="Name" />
               <Input className="w-full" label="Email" />
@@ -174,10 +176,10 @@ export default function Home() {
         <div className="container mx-auto grid w-full grid-cols-[repeat(auto-fit,minmax(256px,1fr))] gap-x-5 gap-y-5 border-b border-theme-base py-6 text-theme-base">
           <div className="">
             <h1 className="text-xl font-semibold">RISTAMAYA</h1>
-            <p className="text-sm">No Copyright just enjoy for sharing</p>
+            <p className="text-sm">Web designer and development locate in Jakarta - Indonesia</p>
           </div>
           <div className="">
-            <h1 className="text-xl font-semibold">RISTAMAYA</h1>
+            <h1 className="text-xl font-semibold">Web Development</h1>
             <p className="text-sm">
               Lorem ipsum dolor sit amet. Id sunt adipisci vel eveniet omnis sit porro suscipit eum
             </p>
