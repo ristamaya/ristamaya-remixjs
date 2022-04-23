@@ -33,12 +33,9 @@ export default function Home() {
       <div className="h-[calc(100vh-64px)] w-full bg-theme-fill bg-hero-pattern bg-cover bg-center bg-no-repeat bg-blend-darken md:bg-fixed">
         <div className="flex h-full items-center justify-center">
           <div className="mx-auto max-w-full px-4 text-center sm:max-w-3xl sm:px-1">
-            <h1 className="pb-4 text-2xl font-extrabold text-theme-inverted sm:text-5xl">
-              DIGITAL MAKES IT POSSIBLE
-            </h1>
+            <h1 className="pb-4 text-2xl font-extrabold text-theme-inverted sm:text-5xl">DIGITAL MAKES IT POSSIBLE</h1>
             <p className="pb-5 text-2xl text-theme-inverted">
-              Hello there welcome to my personal website projects, please take a
-              look what going on here
+              Hello there welcome to my personal website projects, please take a look what going on here
             </p>
           </div>
         </div>
@@ -46,33 +43,22 @@ export default function Home() {
 
       <div className="container mx-auto grid w-full grid-cols-[repeat(auto-fit,minmax(256px,1fr))] gap-x-5 gap-y-5 py-6">
         {introCard.map((item, index) => (
-          <IntroCard
-            key={index}
-            icon={item.icon}
-            title={item.title}
-            content={item.content}
-          />
+          <IntroCard key={index} icon={item.icon} title={item.title} content={item.content} />
         ))}
       </div>
 
       <div className="mb-6 block sm:mb-14">
         <div className="flex h-24 w-full items-center bg-theme-fill px-8">
-          <h1 className="inline-block text-3xl font-bold text-theme-inverted sm:text-4xl">
-            Playground
-          </h1>
+          <h1 className="inline-block text-3xl font-bold text-theme-inverted sm:text-4xl">Playground</h1>
         </div>
 
         <div className="item-center flex justify-center px-5">
           <div className="w-full rounded-md border bg-theme-inverted px-3 py-5 shadow-lg sm:-my-5 lg:ml-64">
-            <h1 className="my-2 text-2xl text-theme-strong">
-              Web programming is fun
-            </h1>
+            <h1 className="my-2 text-2xl text-theme-strong">Web programming is fun</h1>
             <p className=" text-theme-base">
-              Lorem ipsum dolor sit amet. Id sunt adipisci vel eveniet omnis sit
-              porro suscipit eum dolor odit est quasi ratione sed omnis iusto et
-              voluptatem inventore. Eos accusamus unde non esse velit qui iste
-              tempore id quia unde aut itaque quas aut architecto quia est dolor
-              dolores. Id dicta accusantium eos.
+              Lorem ipsum dolor sit amet. Id sunt adipisci vel eveniet omnis sit porro suscipit eum dolor odit est quasi ratione
+              sed omnis iusto et voluptatem inventore. Eos accusamus unde non esse velit qui iste tempore id quia unde aut
+              itaque quas aut architecto quia est dolor dolores. Id dicta accusantium eos.
             </p>
           </div>
         </div>
@@ -80,9 +66,7 @@ export default function Home() {
 
       <div className="block sm:mb-14">
         <div className="flex h-24 w-full items-center justify-center px-8">
-          <h1 className="inline-block text-3xl font-semibold text-theme-base sm:text-4xl">
-            Current Blog
-          </h1>
+          <h1 className="inline-block text-3xl font-semibold text-theme-base sm:text-4xl">Current Blog</h1>
         </div>
 
         <div className="item-center flex justify-center px-10">
@@ -92,9 +76,7 @@ export default function Home() {
 
       <div className="my-5 flex h-fit w-full items-center justify-center px-8">
         <div className="block w-full rounded-md bg-theme-muted px-4 py-2 shadow-md sm:w-fit">
-          <h1 className="mb-5 text-center text-xl font-semibold text-theme-base sm:text-3xl ">
-            Contact
-          </h1>
+          <h1 className="mb-5 text-center text-xl font-semibold text-theme-base sm:text-3xl ">Contact</h1>
           <div className="my-4 block items-center justify-center">
             <Form>
               <Input className="w-full" label="Name" />
@@ -108,9 +90,7 @@ export default function Home() {
 
       <div className="block sm:mb-14">
         <div className="flex h-24 w-full items-center justify-center px-8">
-          <h1 className="inline-block text-3xl font-semibold text-theme-base sm:text-4xl">
-            Build By
-          </h1>
+          <h1 className="inline-block text-3xl font-semibold text-theme-base sm:text-4xl">Build By</h1>
         </div>
 
         <div className="mx-auto max-w-7xl py-2 px-4 sm:px-6 lg:px-8">
@@ -184,33 +164,22 @@ export default function Home() {
         <div className="container mx-auto grid w-full grid-cols-[repeat(auto-fit,minmax(256px,1fr))] gap-x-5 gap-y-5 border-b border-theme-base py-6 text-theme-base">
           <div className="">
             <h1 className="text-xl font-semibold">RISTAMAYA</h1>
-            <p className="text-sm">
-              Fullstack web developer Jakarta - Indonesia
-            </p>
+            <p className="text-sm">Fullstack web developer Jakarta - Indonesia</p>
           </div>
           <div className="">
             <h1 className="text-xl font-semibold">Web Development</h1>
-            <p className="text-sm">
-              Lorem ipsum dolor sit amet. Id sunt adipisci vel eveniet omnis sit
-              porro suscipit eum
-            </p>
+            <p className="text-sm">Lorem ipsum dolor sit amet. Id sunt adipisci vel eveniet omnis sit porro suscipit eum</p>
           </div>
           <div className="">
             <h1 className="text-xl font-semibold">RISTAMAYA</h1>
-            <p className="text-sm">
-              Lorem ipsum dolor sit amet. Id sunt adipisci vel eveniet omnis sit
-              porro suscipit eum
-            </p>
+            <p className="text-sm">Lorem ipsum dolor sit amet. Id sunt adipisci vel eveniet omnis sit porro suscipit eum</p>
           </div>
           <div className="">
             <h1 className="text-xl font-semibold">RISTAMAYA</h1>
-            <p className="text-sm">
-              Lorem ipsum dolor sit amet. Id sunt adipisci vel eveniet omnis sit
-              porro suscipit eum
-            </p>
+            <p className="text-sm">Lorem ipsum dolor sit amet. Id sunt adipisci vel eveniet omnis sit porro suscipit eum</p>
           </div>
         </div>
-        <div className="mt-1 flex justify-center text-xs text-theme-muted">
+        <div className="mt-1 flex justify-center text-xs font-thin text-theme-muted">
           <h1>Ristamaya 2022</h1>
         </div>
       </div>

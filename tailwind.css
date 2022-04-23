@@ -124,10 +124,10 @@
   height: 8px;
 }
 #MainContent::-webkit-scrollbar-track {
-  background-color: rgba(229, 231, 235, var(--bg-opacity));
+  background-color: transparent;
 }
 #MainContent::-webkit-scrollbar-thumb {
   border-radius: 2px;
-  background-color: #747c81;
+  background-color: #7c8083;
 }
 /* --->Scroll Bar<--- */

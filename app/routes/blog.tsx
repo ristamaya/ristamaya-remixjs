@@ -1,10 +1,17 @@
-import { json } from "@remix-run/node";
+import { json, MetaFunction } from "@remix-run/node";
 import { Outlet, useLoaderData } from "@remix-run/react";
-import Sidebar from "~/components/sidebar";
+import Sidebar from "~/components/sidebarmenu";
 import { getMenusByGroup } from "~/models/menus.server";
 
+export const meta: MetaFunction = () => {
+  return {
+    title: "Ristamaya | Blog",
+    description: "remix js react react.js react js web development application",
+  };
+};
+
 export async function loader() {
-  // const menus = await getMenusByGroup("playground");
+  // const menus = await getMenusByGroup("home");
   const menus = [
     {
       menuid: "624fead5cd8aa27ff6db3cec",
@@ -62,11 +69,7 @@ export default function Playground() {
   const menudata = useLoaderData();
   return (
     <div>
-      <div className="fixed left-0 h-full w-52 overflow-auto bg-theme-fill">
-        <Sidebar effect="right" data={menudata} />
-      </div>
-
-      <div className="fixed left-52 h-full w-[calc(100%-208px)] overflow-auto border border-theme-base">
+      <div className="fixed h-full w-full overflow-auto">
         <Outlet />
       </div>
     </div>

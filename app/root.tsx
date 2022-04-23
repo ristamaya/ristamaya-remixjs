@@ -1,5 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
+import { useState } from "react";
+import { ThemeSelector } from "./components/themeselector";
 import styles from "./tailwind.css";
 
 export function links() {
@@ -13,6 +15,8 @@ export const meta: MetaFunction = () => ({
 });
 
 export default function App() {
+  const [theme, setTheme] = useState("");
+
   return (
     <html lang="en">
       <head>
@@ -20,7 +24,13 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <div className={theme}>
+          <Outlet />
+          <div id="ThemeSelector" className="absolute bottom-1 right-2 z-20">
+            <ThemeSelector theme={setTheme} />
+          </div>
+        </div>
+
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
