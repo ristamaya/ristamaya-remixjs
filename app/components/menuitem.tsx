@@ -14,7 +14,7 @@ function MenuItem({ icon, to, title, effect }: props) {
 
   switch (effect) {
     case "bottom":
-      parentClass = "h-fit w-fit px-1 justify-center";
+      parentClass = "h-fit w-fit justify-center";
       childClass = "bottom-0 left-0 duration-700";
       break;
     case "left":
@@ -29,11 +29,9 @@ function MenuItem({ icon, to, title, effect }: props) {
 
   return (
     <Link to={to} className="group">
-      <div className="flex w-fit items-center py-1">
-        {icon && <DynamicIcon className="h-6 w-6 text-theme-base" icon={icon} />}
-        <div
-          className={`relative ml-2 flex items-center overflow-hidden text-theme-base active:text-theme-muted ${parentClass}`}
-        >
+      <div className="mr-2 flex w-full items-center py-1">
+        {icon && <DynamicIcon className="mx-1 h-6 w-6 text-theme-base" icon={icon} />}
+        <div className={`relative flex items-center overflow-hidden text-theme-base active:text-theme-muted ${parentClass}`}>
           <span
             className={`absolute h-[2px] w-0 bg-theme-muted transition-all ease-in-out group-hover:w-full ${childClass}`}
           ></span>

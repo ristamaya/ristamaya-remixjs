@@ -15,7 +15,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const [value, setValue] = useState("");
 
     return (
-      <div className="relative m-3 flex h-fit w-fit items-center justify-center">
+      <div className="relative m-3 flex h-auto w-auto items-center justify-center">
         <input
           {...props}
           value={value}
@@ -45,10 +45,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             className={`absolute right-1 h-fit w-fit cursor-pointer border-l border-theme-base bg-theme-muted text-theme-base`}
             aria-hidden={true}
           >
-            <DynamicIcon
-              icon="FiChevronLeft"
-              className={`${openData && "-rotate-90"} h-6 w-6  transition duration-300`}
-            />
+            <DynamicIcon icon="FiChevronLeft" className={`${openData && "-rotate-90"} h-6 w-6  transition duration-300`} />
           </span>
         )}
 

@@ -7,33 +7,29 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model users {
   userid       String   @id @default(auto()) @map("_id") @db.ObjectId
-  useremail    String
+  useremail    String   @unique
   userpassword String
-  userstatus   String
-  maxsession   BigInt
-  createby     String
-  createat     DateTime @updatedAt
-  updateat     DateTime @updatedAt
-}
+  userstatus   String   @default("active")
+  maxsession   BigInt?
+  createby     String?
+  createat     DateTime @default(now())
+  updateat     DateTime? @updatedAt 
+} 
 
 model menus {
   menuid   String @id @default(auto()) @map("_id") @db.ObjectId
-  createby String
   group    String
-  icon     String
   parent   String
+  type     String
+  title    String
+  icon     String
   path     String
   pathtype String
+  order    Int
   status   String
-  title    String
-  type     String
-}
-
-model ristamaya {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  createby String
 }
 
 model visitors {

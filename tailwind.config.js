@@ -31,6 +31,7 @@ module.exports = {
           muted: withOpacity("--color-text-muted"),
           inverted: withOpacity("--color-text-inverted"),
           warning: withOpacity("--color-text-warning"),
+          link: withOpacity("--color-text-link"),
         },
       },
       borderColor: {

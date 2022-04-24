@@ -15,6 +15,7 @@
     --color-text-muted: 199, 210, 254;
     --color-text-inverted: 231, 229, 228;
     --color-text-warning: 244, 63, 94;
+    --color-text-link: 79, 70, 229;
     --color-btn-base: 99, 102, 241;
     --color-btn-hover: 238, 242, 255;
     --color-btn-inverted: 51, 65, 85;
@@ -30,6 +31,7 @@
     --color-text-muted: 199, 210, 254;
     --color-text-inverted: 231, 229, 228;
     --color-text-warning: 244, 63, 94;
+    --color-text-link: 79, 70, 229;
     --color-btn-base: 245, 158, 11;
     --color-btn-hover: 245, 158, 11;
     --color-btn-inverted: 51, 65, 85;
@@ -44,6 +46,7 @@
     --color-text-strong: 28, 25, 23;
     --color-text-muted: 199, 210, 254;
     --color-text-warning: 244, 63, 94;
+    --color-text-link: 79, 70, 229;
     --color-text-inverted: 231, 229, 228;
     --color-btn-base: 34, 211, 238;
     --color-btn-hover: 238, 242, 255;
@@ -60,6 +63,7 @@
     --color-text-muted: 226, 232, 240;
     --color-text-inverted: 168, 162, 158;
     --color-text-warning: 244, 63, 94;
+    --color-text-link: 79, 70, 229;
     --color-btn-base: 51, 65, 85;
     --color-btn-hover: 238, 242, 255;
     --color-btn-inverted: 99, 102, 241;
@@ -75,6 +79,7 @@
     --color-text-muted: 226, 232, 240;
     --color-text-inverted: 148, 163, 184;
     --color-text-warning: 244, 63, 94;
+    --color-text-link: 79, 70, 229;
     --color-btn-base: 87, 83, 78;
     --color-btn-hover: 87, 83, 78;
     --color-btn-inverted: 99, 102, 241;

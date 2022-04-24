@@ -9,7 +9,7 @@ interface props {
   data: menus[];
 }
 
-export const PlaygroundItems = ({ data }: props) => {
+export const MenuIcon = ({ data }: props) => {
   const [openMenu, setOpenMenu] = useState(true);
 
   return (
@@ -24,17 +24,15 @@ export const PlaygroundItems = ({ data }: props) => {
       </button>
       {openMenu && (
         <div
-          className="invisible absolute top-[40px] left-2 z-40 h-fit max-h-[calc(100vh-74px)] w-auto -translate-x-full 
-          flex-row overflow-auto rounded-sm border border-theme-base bg-theme-fill px-3 pt-2 pb-4 opacity-0 shadow-lg transition-all 
-          duration-500 hover:visible hover:translate-x-0 hover:opacity-100 peer-focus:visible peer-focus:translate-x-0 peer-focus:opacity-100"
+          className="invisible absolute top-[40px] right-0 z-40 h-fit max-h-[calc(100vh-74px)] w-auto translate-x-full 
+          flex-row overflow-auto rounded-[4px] border border-theme-base/80 bg-theme-muted/75 px-3 pt-2 pb-4 opacity-0 shadow-lg transition-all 
+          duration-500 hover:visible hover:-translate-x-0 hover:opacity-100 peer-focus:visible peer-focus:-translate-x-0 peer-focus:opacity-100"
           aria-hidden={true}
         >
           <div className="row-auto grid gap-y-2">
             {data.map((item, index) => (
               <div>
-                {item.group == "home" && (
-                  <MenuItem key={index} effect="bottom" title={item.title} to={item.path} icon={item.icon} />
-                )}
+                <MenuItem key={index} effect="bottom" title={item.title} to={item.path} icon={item.icon} />
               </div>
             ))}
           </div>

@@ -12,6 +12,7 @@
     "start": "cross-env NODE_ENV=production remix dev"
   },
   "dependencies": {
+    "@node-rs/bcrypt": "^1.6.0",
     "@prisma/client": "^3.12.0",
     "@remix-run/node": "^1.4.0",
     "@remix-run/react": "^1.4.0",
