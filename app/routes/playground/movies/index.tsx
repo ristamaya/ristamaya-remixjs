@@ -12,10 +12,12 @@ export default function MoviesIndex() {
   const moviesData: Movies[] = useLoaderData();
 
   return (
-    <div className="inline-grid w-full grid-cols-1 justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {moviesData.map((item, index) => (
-        <MovieCard key={index} data={item} />
-      ))}
-    </div>
+    <>
+      <div className="inline-grid w-full grid-cols-1 justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {moviesData.map((item, index) => (
+          <MovieCard key={index} data={item} />
+        ))}
+      </div>
+    </>
   );
 }

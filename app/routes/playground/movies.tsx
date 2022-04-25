@@ -33,6 +33,17 @@ export default function Movies() {
         className="fixed top-10 h-[calc(100%-40px)] w-full max-w-[calc(100vw-36px)] overflow-auto bg-theme-inverted md:max-w-[calc(100vw-112px)]"
       >
         <Outlet />
+
+        <div className="m-auto flex w-fit items-center">
+          <span className="flex text-sm text-theme-base">Movies API By</span>
+          <a
+            target={"_blank"}
+            href="https://developers.themoviedb.org/3"
+            className="flex h-16 w-32 justify-center p-1 grayscale transition duration-500 hover:grayscale-0"
+          >
+            <img alt="themoviedb API" src={"/img/tmdb.svg"} />
+          </a>
+        </div>
       </div>
     </>
   );
