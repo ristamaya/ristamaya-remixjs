@@ -1,4 +1,4 @@
-function ComponentsShared() {
+function Playground() {
   return (
     <div className="m-auto h-full p-5 text-center text-4xl text-theme-base">
       Let's explore my Playground
@@ -8,4 +8,4 @@ function ComponentsShared() {
   );
 }
 
-export default ComponentsShared;
+export default Playground;

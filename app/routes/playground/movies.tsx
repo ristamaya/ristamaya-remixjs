@@ -19,18 +19,21 @@ export async function loader() {
 export default function Movies() {
   const menudata = useLoaderData();
   return (
-    <div>
-      <div id="Navbar" className="fixed z-20 block h-12 w-screen items-center bg-theme-fill shadow-lg">
-        <div>Movie List</div>
+    <>
+      <div
+        id="Navbar"
+        className="fixed z-20 flex h-10 w-full max-w-[calc(100vw-36px)] items-center justify-between overflow-x-auto overflow-y-hidden bg-theme-fill shadow-lg md:max-w-[calc(100vw-112px)]"
+      >
         <Menubar data={menudata} />
+        <div className="flex text-center font-semibold text-theme-base">Movie List</div>
       </div>
 
       <div
         id="MainContent"
-        className="fixed top-12 h-[calc(100%-48px)] w-full max-w-[calc(100vw-112px)] overflow-auto bg-theme-inverted"
+        className="fixed top-10 h-[calc(100%-40px)] w-full max-w-[calc(100vw-36px)] overflow-auto bg-theme-inverted md:max-w-[calc(100vw-112px)]"
       >
         <Outlet />
       </div>
-    </div>
+    </>
   );
 }

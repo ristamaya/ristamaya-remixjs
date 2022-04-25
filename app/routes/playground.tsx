@@ -25,7 +25,7 @@ export default function Playground() {
     <div>
       <div
         id="SideBar"
-        className="fixed z-10 block h-screen w-9 overflow-y-auto overflow-x-hidden bg-theme-fill px-1 py-2 shadow-lg md:w-28"
+        className="container fixed z-10 h-screen w-9 overflow-y-auto overflow-x-hidden bg-theme-fill px-1 py-2 shadow-lg md:w-28"
       >
         <MenuItem to="/" title="Home" effect="bottom" icon="FiHome" />
         <hr className="mt-3 w-full border border-theme-base"></hr>
