@@ -1,21 +1,31 @@
-import { useLoaderData } from "@remix-run/react";
-import WorkOnIt from "~/components/workonit";
-import MovieCard, { Movies } from "~/components/moviecard";
+import { Link, useLoaderData } from "@remix-run/react";
+import MovieCard from "~/components/moviecard";
+import { MovieKeyword } from "~/models/movies.server";
+import { getMovieByKeyword } from "~/models/movies.server";
+import useStore from "~/stores/useMovieKeyword";
 
 export async function loader() {
-  const res = await fetch("https://api.themoviedb.org/3/keyword/180547/movies?api_key=8a6e0734cef4f20fdd614432c5f2d622");
-  const movies = await res.json();
-  return movies.results;
+  const movies = getMovieByKeyword("180547");
+  return movies;
 }
 
 export default function MoviesIndex() {
-  const moviesData: Movies[] = useLoaderData();
+  const keyword = useStore((state) => state.keyword);
+  const moviesData = useLoaderData<MovieKeyword[]>();
 
+  // console.log(moviesData);
   return (
     <>
       <div className="inline-grid w-full grid-cols-1 justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {moviesData.map((item, index) => (
-          <MovieCard key={index} data={item} />
+        {moviesData.map((item) => (
+          <Link
+            key={item.id}
+            title={item.title}
+            to={item.id.toString()}
+            className="group relative m-1 flex h-fit w-fit cursor-pointer overflow-hidden rounded-[4px]"
+          >
+            <MovieCard Movie={item} />
+          </Link>
         ))}
       </div>
     </>

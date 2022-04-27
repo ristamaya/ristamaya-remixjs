@@ -31,8 +31,8 @@ export const MenuIcon = ({ data }: props) => {
         >
           <div className="row-auto grid gap-y-2">
             {data.map((item, index) => (
-              <div>
-                <MenuItem key={index} effect="bottom" title={item.title} to={item.path} icon={item.icon} />
+              <div key={index}>
+                <MenuItem effect="bottom" title={item.title} to={item.path} icon={item.icon} />
               </div>
             ))}
           </div>
