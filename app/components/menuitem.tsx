@@ -5,7 +5,7 @@ interface props {
   icon?: string;
   to: string;
   title: string;
-  effect: "bottom" | "left" | "right";
+  effect: "bottom" | "left" | "right" | "none";
 }
 
 function MenuItem({ icon, to, title, effect }: props) {
@@ -15,15 +15,19 @@ function MenuItem({ icon, to, title, effect }: props) {
   switch (effect) {
     case "bottom":
       parentClass = "h-fit w-fit justify-center";
-      childClass = "bottom-0 left-0 duration-700";
+      childClass = "h-[2px] bottom-0 left-0 duration-700";
       break;
     case "left":
       parentClass = "h-fit w-52 py-2 justify-left px-2";
-      childClass = "bottom-0 left-0 duration-500";
+      childClass = "h-[2px] bottom-0 left-0 duration-500";
       break;
     case "right":
       parentClass = "h-fit w-52 justify-right px-2";
-      childClass = "bottom-0 right-0 duration-500";
+      childClass = "h-[2px] bottom-0 right-0 duration-500";
+      break;
+    case "none":
+      parentClass = "";
+      childClass = "h-0";
       break;
   }
 
@@ -34,10 +38,8 @@ function MenuItem({ icon, to, title, effect }: props) {
         <div
           className={`relative flex w-fit items-center overflow-hidden text-theme-base active:text-theme-muted ${parentClass}`}
         >
-          <span
-            className={`absolute h-[2px] w-0 bg-theme-muted transition-all ease-in-out group-hover:w-full ${childClass}`}
-          ></span>
-          <h1 className="invisible md:visible">{title}</h1>
+          <span className={`absolute w-0 bg-theme-muted transition-all ease-in-out group-hover:w-full ${childClass}`}></span>
+          <h1 className="">{title}</h1>
         </div>
       </div>
     </Link>

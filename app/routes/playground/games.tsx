@@ -1,8 +1,5 @@
-import { json, MetaFunction } from "@remix-run/node";
-import { Outlet, useLoaderData } from "@remix-run/react";
-import Menubar from "~/components/menubar";
-import WorkOnIt from "~/components/workonit";
-import { getMenusByGroup } from "~/models/menus.server";
+import { MetaFunction } from "@remix-run/node";
+import { Outlet } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return {
@@ -11,21 +8,10 @@ export const meta: MetaFunction = () => {
   };
 };
 
-export async function loader() {
-  const menus = await getMenusByGroup("movies");
-
-  return json(menus);
-}
-
 export default function Movies() {
-  const menudata = useLoaderData();
   return (
     <div>
-      <div id="Navbar" className="fixed z-10 block h-12 w-screen items-center bg-theme-fill shadow-lg">
-        <Menubar data={menudata} />
-      </div>
-
-      <div id="MainContent" className="fixed top-12 h-[calc(100%-48px)] w-full overflow-auto bg-theme-inverted">
+      <div id="MainContent" className="fixed h-[calc(100%-40px)] w-full overflow-auto bg-theme-inverted">
         <Outlet />
       </div>
     </div>

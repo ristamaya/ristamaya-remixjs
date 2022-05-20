@@ -21,6 +21,4 @@ if (process.env.NODE_ENV === "production") {
   prisma.$connect();
 }
 
-// prisma = new PrismaClient();
-
 export { prisma };

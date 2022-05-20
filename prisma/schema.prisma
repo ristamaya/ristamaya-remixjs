@@ -1,22 +1,22 @@
-generator client {
-  provider = "prisma-client-js"
-}
-
 datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
+generator client {
+  provider = "prisma-client-js"
+}
+
 model users {
-  userid       String   @id @default(auto()) @map("_id") @db.ObjectId
-  useremail    String   @unique
+  userid       String    @id @default(auto()) @map("_id") @db.ObjectId
+  useremail    String    @unique
   userpassword String
-  userstatus   String   @default("active")
+  userstatus   String    @default("active")
   maxsession   BigInt?
   createby     String?
-  createat     DateTime @default(now())
-  updateat     DateTime? @updatedAt 
-} 
+  createat     DateTime  @default(now())
+  updateat     DateTime? @updatedAt
+}
 
 model menus {
   menuid   String @id @default(auto()) @map("_id") @db.ObjectId
@@ -43,4 +43,24 @@ model visitors {
   postal       String?
   state        String?
   visitat      DateTime @default(now())
+}
+
+type peopleid {
+  idtype String?
+  idno   String?
+}
+
+model peoples {
+  peopeid   String     @id @default(auto()) @map("_id") @db.ObjectId
+  firstname String?
+  midname   String?
+  lastname  String?
+  nickname  String?
+  address   String?
+  provinsi  String?
+  kota      String?
+  kecamatan String?
+  kelurahan String?
+  kodepos   String?
+  identitas peopleid[]
 }
