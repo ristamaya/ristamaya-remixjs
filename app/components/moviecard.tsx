@@ -4,10 +4,10 @@ export default function MovieCard({ Movie }: iMovieKeyword) {
   const imgPath = "https://image.tmdb.org/t/p/w500";
 
   return (
-    <>
+    <div className="relative flex">
       <img
         src={imgPath + Movie.poster_path}
-        className="h-fit object-scale-down transition-all duration-500 group-hover:scale-105"
+        className="w-64 object-scale-down transition-all duration-500 group-hover:scale-105"
       />
       <div className="absolute top-0 right-0 rounded-bl-[4px] bg-theme-fill/80 p-2 text-center">
         <h1 className="text-sm font-black text-theme-muted underline">{Movie.vote_average}</h1>
@@ -22,6 +22,6 @@ export default function MovieCard({ Movie }: iMovieKeyword) {
         </p>
         <h1 className="z-50 text-lg font-semibold leading-none text-theme-inverted">{Movie.title}</h1>
       </div>
-    </>
+    </div>
   );
 }

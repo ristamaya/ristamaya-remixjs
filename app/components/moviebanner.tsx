@@ -1,5 +1,7 @@
 import { Link } from "@remix-run/react";
 import { iMovie } from "~/models/movies.server";
+import DynamicIcon from "./dynamicicon";
+import MenuItem from "./menuitem";
 
 type MovieBannerProps = {
   backdrop_path: iMovie["backdrop_path"];
@@ -9,14 +11,13 @@ type MovieBannerProps = {
 export default function MovieBanner({ backdrop_path, title }: MovieBannerProps) {
   const imgPath = "https://image.tmdb.org/t/p/original";
   return (
-    <div>
-      <div className="relative h-[36rem] w-full overflow-hidden">
-        <img src={imgPath + backdrop_path} className="absolute -z-50 h-full w-full object-cover" />
-        <div className="absolute flex h-full w-full flex-col items-start justify-between">
-          <div className="bg-theme-fill/40 p-5 bg-blend-darken">
-            <h1 className="text-3xl font-bold text-theme-inverted">{title}</h1>
-          </div>
-        </div>
+    <div className="relative flex">
+      <img src={imgPath + backdrop_path} className="-z-50 w-screen object-cover" />
+      <div className="absolute top-0 rounded-br-md bg-theme-fill/40 p-2 text-lg font-semibold text-theme-inverted bg-blend-darken">
+        <MenuItem title="Back" to="/playground/movies" effect="bottom" icon="FiChevronsLeft" />
+      </div>
+      <div className="absolute bottom-3 bg-theme-fill/75 p-3 text-lg font-bold text-theme-inverted bg-blend-darken sm:text-3xl">
+        {title}
       </div>
     </div>
   );

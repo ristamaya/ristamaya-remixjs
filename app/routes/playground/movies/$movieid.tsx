@@ -26,15 +26,10 @@ export default function Movie() {
       <MovieBanner backdrop_path={movie.backdrop_path} title={movie.title} />
 
       <div className="p-10">
-        <p>{movie.homepage}</p>
-
+        <p>{movie.video}</p>
         <div className="flex space-x-5 py-5">
-          {/* <CastList characters={movieCast.character} /> */}
-
           <div className="flex flex-1 flex-col justify-between">
             <Outlet />
-
-            {/* <CommentsList filmId={film.id} comments={film.comments || []} /> */}
           </div>
         </div>
       </div>

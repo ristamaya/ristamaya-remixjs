@@ -9,7 +9,7 @@ interface props {
 
 export default function SidebarMenu({ effect, data, className }: props) {
   return (
-    <div id="SideBar" className={`relative flex-row py-2 ${className}`}>
+    <div id="SideBar" className={`relative flex-row py-2 text-theme-base ${className}`}>
       {data.map((item, index) => (
         <MenuItem key={index} to={item.path} title={item.title} effect={effect} icon={item.icon} />
       ))}

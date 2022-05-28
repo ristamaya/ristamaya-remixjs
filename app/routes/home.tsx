@@ -100,7 +100,7 @@ export default function Home() {
 
   return (
     <div>
-      <div id="Navbar" className="fixed z-10 flex h-16 w-screen items-center bg-theme-fill px-2 shadow-lg">
+      <div id="Navbar" className="fixed z-10 flex h-16 w-screen items-center bg-theme-fill px-2 text-theme-base shadow-lg">
         <Menubar data={menudata} />
         <MenuIcon data={userMenus} />
       </div>

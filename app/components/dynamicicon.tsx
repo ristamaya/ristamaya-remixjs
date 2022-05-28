@@ -1,8 +1,10 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import * as fiIcons from "react-icons/fi";
+import * as mdIcons from "react-icons/md";
 
 const DynamicIcon: FC<{ icon: string; className: string }> = (props) => {
-  const { ...icons } = fiIcons;
+  const { ...icons } = props.icon.substring(2, 0) == "Fi" ? fiIcons : mdIcons;
+
   // @ts-ignore
   const TheIcon: JSX.Element = icons[props.icon];
 

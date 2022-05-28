@@ -34,10 +34,8 @@ function MenuItem({ icon, to, title, effect }: props) {
   return (
     <Link to={to} className="group">
       <div className="container mr-2 flex w-fit items-center py-1">
-        {icon && <DynamicIcon className="mx-1 h-6 w-6 text-theme-base" icon={icon} />}
-        <div
-          className={`relative flex w-fit items-center overflow-hidden text-theme-base active:text-theme-muted ${parentClass}`}
-        >
+        {icon && <DynamicIcon className="mx-1 h-6 w-6" icon={icon} />}
+        <div className={`relative flex w-fit items-center overflow-hidden active:text-theme-muted ${parentClass}`}>
           <span className={`absolute w-0 bg-theme-muted transition-all ease-in-out group-hover:w-full ${childClass}`}></span>
           <h1 className="">{title}</h1>
         </div>

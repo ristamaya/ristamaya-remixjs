@@ -113,24 +113,12 @@ export interface iMovie {
 
 const ApiKey = "8a6e0734cef4f20fdd614432c5f2d622";
 
-export async function getMovieByKeyword(keyword: string | null) {
-  // const response = await fetch(`https://api.themoviedb.org/3/keyword/${keyword}/movies?api_key=${ApiKey}`);
+export async function getMovieByKeyword(keyword: string, page: number) {
   let movies: MovieKeyword[];
+  const response = await fetch(`https://api.themoviedb.org/3/keyword/${keyword}/movies?page=${page}&api_key=${ApiKey}`);
+  const movieRes = await response.json();
 
-  const respage1 = await fetch(
-    "https://api.themoviedb.org/3/company/420/movies?page=1&api_key=8a6e0734cef4f20fdd614432c5f2d622"
-  );
-  const moviePage1 = await respage1.json();
-
-  movies = moviePage1.results;
-
-  // const respage2 = await fetch(
-  //   "https://api.themoviedb.org/3/company/420/movies?page=2&api_key=8a6e0734cef4f20fdd614432c5f2d622"
-  // );
-
-  // const moviePage2 = await respage2.json();
-
-  // movies.push(moviePage2.results);
+  movies = movieRes.results;
 
   return movies;
 }

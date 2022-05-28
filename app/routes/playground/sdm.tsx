@@ -17,18 +17,16 @@ export async function loader() {
   return json(menus);
 }
 
-export default function Movies() {
-  const menudata = useLoaderData();
+export default function Sdm() {
   return (
-    <div>
-      <div id="Navbar" className="fixed z-10 block h-12 w-screen items-center bg-theme-fill shadow-lg">
-        <div>SDM</div>
-        <Menubar data={menudata} />
+    <>
+      <div className="flex h-10 w-screen items-center justify-between bg-theme-fill px-2 shadow-lg">
+        {" "}
+        <div className="ml-[145px] text-lg font-semibold text-theme-base">SDM</div>
       </div>
-
-      <div id="MainContent" className="fixed top-12 h-[calc(100%-48px)] w-full overflow-auto bg-theme-inverted">
+      <div id="MainContent" className="fixed h-[calc(100%-40px)] w-full overflow-auto bg-theme-muted">
         <Outlet />
       </div>
-    </div>
+    </>
   );
 }
