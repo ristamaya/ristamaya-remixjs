@@ -457,7 +457,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   --color-btn-inverted: 51, 65, 85;
 }
 
-.theme-sky {
+.theme-cyan {
   --color-fill: 34, 211, 238;
   --color-muted: 236, 254, 255;
   --color-inverted: 248, 250, 252;
@@ -695,14 +695,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   z-index: 0;
 }
 
-.-z-10 {
-  z-index: -10;
-}
-
-.-z-20 {
-  z-index: -20;
-}
-
 .row-auto {
   grid-row: auto;
 }
@@ -804,6 +796,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 145px;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -890,14 +886,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: calc(100vh - 40px);
 }
 
-.h-36 {
-  height: 9rem;
-}
-
-.h-4 {
-  height: 1rem;
-}
-
 .max-h-\[calc\(100vh-74px\)\] {
   max-height: calc(100vh - 74px);
 }
@@ -980,10 +968,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-14 {
   width: 3.5rem;
-}
-
-.w-4 {
-  width: 1rem;
 }
 
 .min-w-\[150px\] {
@@ -1892,10 +1876,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 768px) {
-  .md\:w-64 {
-    width: 16rem;
-  }
-
   .md\:w-56 {
     width: 14rem;
   }

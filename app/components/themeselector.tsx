@@ -19,7 +19,7 @@ export const ThemeSelector = ({ theme }: any) => {
           <span className="text-sm font-semibold text-theme-strong">Theme Color</span>
           <button
             onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
-              theme("theme-sky");
+              theme("theme-cyan");
             }}
             className="text-md my-1 flex w-24 cursor-pointer justify-center rounded-sm bg-cyan-600 p-1 hover:opacity-80"
           >

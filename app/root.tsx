@@ -15,7 +15,7 @@ export const meta: MetaFunction = () => ({
 });
 
 export default function App() {
-  const [theme, setTheme] = useState("");
+  const [theme, setTheme] = useState("theme-cyan");
 
   return (
     <html lang="en">
