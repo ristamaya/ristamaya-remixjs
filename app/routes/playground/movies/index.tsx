@@ -1,7 +1,9 @@
 import { json, LoaderFunction } from "@remix-run/node";
-import { Link, useFetcher, useLoaderData } from "@remix-run/react";
+import { Form, Link, useFetcher, useLoaderData } from "@remix-run/react";
 import { useEffect, useState } from "react";
+import DynamicIcon from "~/components/dynamicicon";
 import { Button } from "~/components/formcontrol/button";
+import { Input } from "~/components/formcontrol/input";
 import MovieCard from "~/components/moviecard";
 import { getMenusByGroup } from "~/models/menus.server";
 import { MovieKeyword } from "~/models/movies.server";
@@ -54,7 +56,23 @@ export default function MoviesIndex() {
 
   return (
     <>
-      <div className="relative flex h-64 w-full justify-center text-center">Marvel Cinematic Universe</div>
+      {/* <div className="fixed -z-10 flex h-10 w-screen items-center justify-between overflow-hidden bg-theme-fill px-1">
+        <div className="ml-[145px] text-lg font-semibold text-theme-base">Movies</div> */}
+      {/* </div> */}
+
+      <div className="relative flex h-36 w-full justify-center text-center">
+        <h1 className="my-2 text-xl font-semibold text-theme-strong md:text-3xl">Marvel Cinematic Universe</h1>
+        <div className="absolute -top-2 right-1 w-auto">
+          <Form method="get">
+            <div className="relative flex items-center">
+              <Input className="w-32 md:w-56" label="" placeholder="Search" name="title" />
+              <button className="absolute right-5 z-10" type="submit">
+                <DynamicIcon icon="MdSearch" className="h-6 w-6 text-theme-base" />
+              </button>
+            </div>
+          </Form>
+        </div>
+      </div>
 
       <div className="mx-auto inline-flex flex-wrap justify-center bg-theme-muted px-3">
         {movies.map((item) => (

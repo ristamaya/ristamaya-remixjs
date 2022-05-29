@@ -1,5 +1,5 @@
 import { MetaFunction } from "@remix-run/node";
-import { Outlet } from "@remix-run/react";
+import { Link, Outlet } from "@remix-run/react";
 import { Input } from "~/components/formcontrol/input";
 
 export const meta: MetaFunction = () => {
@@ -12,14 +12,13 @@ export const meta: MetaFunction = () => {
 export default function Movies() {
   return (
     <>
-      <div className="flex h-10 w-screen items-center justify-between overflow-hidden bg-theme-fill px-1">
-        <div className="ml-[145px] text-lg font-semibold text-theme-base">Movies</div>
-        <div className="flex w-auto">
-          <form>
-            <Input className="w-32 md:w-64" label="" placeholder="Search" name="title" />
-          </form>
-        </div>
+      <div className="flex h-10 w-screen items-center justify-between overflow-hidden bg-theme-fill px-2">
+        <Link to="/playground/movies">
+          <div className="ml-[145px] text-lg font-semibold text-theme-base">Movies</div>
+        </Link>
+        <div className="flex w-auto">Test</div>
       </div>
+
       <div id="MainContent" className="fixed h-[calc(100vh-40px)] w-screen overflow-y-auto overflow-x-hidden bg-theme-muted">
         <Outlet />;
         <div className="m-auto my-1 flex w-full items-center justify-center">
