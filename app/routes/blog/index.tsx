@@ -1,5 +1,9 @@
-import React from "react";
+import WorkOnIt from "~/components/workonit";
 
-export default function BlogIndex() {
-  return <div>BlogIndex</div>;
+export default function Blog() {
+  return (
+    <div className="relative flex h-full w-full bg-theme-fill text-theme-inverted">
+      <WorkOnIt />
+    </div>
+  );
 }

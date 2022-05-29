@@ -1,7 +1,6 @@
 import { json, MetaFunction } from "@remix-run/node";
 import { Outlet, useLoaderData } from "@remix-run/react";
-import Sidebar from "~/components/sidebarmenu";
-import { getMenusByGroup } from "~/models/menus.server";
+import Menubar from "~/components/menubar";
 
 export const meta: MetaFunction = () => {
   return {
@@ -11,15 +10,47 @@ export const meta: MetaFunction = () => {
 };
 
 export async function loader() {
-  const menus = getMenusByGroup("blog");
+  const menus = [
+    {
+      menuid: "0",
+      createby: "Anjar",
+      group: "auth",
+      icon: "FiHome",
+      parent: "",
+      path: "/home",
+      pathtype: "internal",
+      status: "active",
+      title: "Home",
+      order: 0,
+      type: "url",
+    },
+    {
+      menuid: "1",
+      createby: "Anjar",
+      group: "auth",
+      icon: "FiFilm",
+      parent: "",
+      path: "/playground",
+      pathtype: "internal",
+      status: "active",
+      title: "Playground",
+      order: 1,
+      type: "url",
+    },
+  ];
+
   return json(menus);
 }
 
-export default function Playground() {
+export default function Blog() {
   const menudata = useLoaderData();
   return (
     <div>
-      <div className="fixed h-full w-full overflow-auto">
+      <div id="Navbar" className="fixed z-10 flex h-16 w-screen items-center bg-theme-fill px-2 shadow-lg">
+        <Menubar data={menudata} useIcon={true} />
+      </div>
+
+      <div id="MainContent" className="fixed top-16 h-[calc(100%-64px)] w-screen overflow-auto bg-theme-inverted">
         <Outlet />
       </div>
     </div>

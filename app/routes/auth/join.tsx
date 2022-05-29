@@ -69,7 +69,6 @@ export default function Join() {
 
   React.useEffect(() => {
     if (actionData?.errors?.useremail) {
-      console.log("asd", actionData?.errors?.useremail);
       emailRef.current?.focus();
     } else if (actionData?.errors?.password) {
       passwordRef.current?.focus();
@@ -81,7 +80,7 @@ export default function Join() {
   return (
     <div>
       <div className="mx-auto my-6 w-full max-w-sm rounded-md border border-theme-base/50 bg-theme-muted px-7 py-8 text-center shadow-lg">
-        <h1 className="mb-10 text-xl font-semibold text-theme-base">Join To My Experiment</h1>
+        <h1 className="mb-10 text-xl font-semibold text-theme-base">Join To My Playground</h1>
         <Form method="post">
           <Input
             ref={emailRef}

@@ -17,7 +17,7 @@ export async function loader() {
       group: "auth",
       icon: "FiHome",
       parent: "",
-      path: "/",
+      path: "/home",
       pathtype: "internal",
       status: "active",
       title: "Home",
