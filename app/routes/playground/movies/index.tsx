@@ -9,11 +9,11 @@ import { getMenusByGroup } from "~/models/menus.server";
 import { MovieKeyword } from "~/models/movies.server";
 import { getMovieByKeyword } from "~/models/movies.server";
 
-const getPage = (searchParams: URLSearchParams) => Number(searchParams.get("page") || "1");
-
 export const loader: LoaderFunction = async ({ request }) => {
-  const page = getPage(new URL(request.url).searchParams);
-  const movies = getMovieByKeyword("180547", page);
+  const url = new URL(request.url);
+  const title = url.searchParams.get("title");
+  const page = url.searchParams.get("page");
+  const movies = getMovieByKeyword("180547", page, title);
 
   if (!movies) {
     return "no movie data";
@@ -56,14 +56,10 @@ export default function MoviesIndex() {
 
   return (
     <>
-      {/* <div className="fixed -z-10 flex h-10 w-screen items-center justify-between overflow-hidden bg-theme-fill px-1">
-        <div className="ml-[145px] text-lg font-semibold text-theme-base">Movies</div> */}
-      {/* </div> */}
-
-      <div className="relative flex h-36 w-full justify-center text-center">
-        <h1 className="my-2 text-xl font-semibold text-theme-strong md:text-3xl">Marvel Cinematic Universe</h1>
+      <div className="relative flex w-full justify-center text-center">
+        <h1 className="mt-2 mb-5 text-xl font-semibold text-theme-strong md:text-3xl">Marvel Cinematic Universe</h1>
         <div className="absolute -top-2 right-1 w-auto">
-          <Form method="get">
+          <Form reloadDocument method="get">
             <div className="relative flex items-center">
               <Input className="w-32 md:w-56" label="" placeholder="Search" name="title" />
               <button className="absolute right-5 z-10" type="submit">
@@ -86,7 +82,7 @@ export default function MoviesIndex() {
           </Link>
         ))}
 
-        <Button label="Load More" className="h-10 w-14" onClick={ClickHandler} hidden={hideLoadMore} />
+        {/* <Button label="Load More" className="h-10 w-14" onClick={ClickHandler} hidden={hideLoadMore} /> */}
       </div>
     </>
   );

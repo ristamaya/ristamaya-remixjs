@@ -11,57 +11,7 @@ export const meta: MetaFunction = () => {
 };
 
 export async function loader() {
-  // const menus = await getMenusByGroup("home");
-  const menus = [
-    {
-      menuid: "624fead5cd8aa27ff6db3cec",
-      createby: "Anjar",
-      group: "home",
-      icon: "",
-      parent: "",
-      path: "/",
-      pathtype: "internal",
-      status: "active",
-      title: "Home",
-      type: "url",
-    },
-    {
-      menuid: "624feb66fcfcea6595c0e9dc",
-      createby: "Anjar",
-      group: "home",
-      icon: "",
-      parent: "",
-      path: "/home/playground",
-      pathtype: "internal",
-      status: "active",
-      title: "Playground",
-      type: "url",
-    },
-    {
-      menuid: "624febf4fcfcea6595c0e9de",
-      createby: "Anjar",
-      group: "home",
-      icon: "",
-      parent: "",
-      path: "/home/blog",
-      pathtype: "internal",
-      status: "active",
-      title: "Blog",
-      type: "url",
-    },
-    {
-      menuid: "624fec38fcfcea6595c0e9df",
-      createby: "Anjar",
-      group: "home",
-      icon: "",
-      parent: "",
-      path: "/home/about",
-      pathtype: "internal",
-      status: "active",
-      title: "About",
-      type: "url",
-    },
-  ];
+  const menus = getMenusByGroup("blog");
   return json(menus);
 }
 

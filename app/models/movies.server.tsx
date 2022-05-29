@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export type MovieKeyword = {
   id: number;
   adult: boolean;
@@ -113,14 +115,29 @@ export interface iMovie {
 
 const ApiKey = "8a6e0734cef4f20fdd614432c5f2d622";
 
-export async function getMovieByKeyword(keyword: string, page: number) {
-  let movies: MovieKeyword[];
-  const response = await fetch(`https://api.themoviedb.org/3/keyword/${keyword}/movies?page=${page}&api_key=${ApiKey}`);
-  const movieRes = await response.json();
+export async function getMovieByKeyword(keyword: string, page?: string | null, title?: string | null) {
+  let moviesMCU: MovieKeyword[] = [];
 
-  movies = movieRes.results;
+  try {
+    const page1 = await fetch(`https://api.themoviedb.org/3/keyword/${keyword}/movies?page=1&api_key=${ApiKey}`).then(
+      (response) => response.json()
+    );
 
-  return movies;
+    moviesMCU = page1.results;
+    const page2 = await fetch(`https://api.themoviedb.org/3/keyword/${keyword}/movies?page=2&api_key=${ApiKey}`).then(
+      (response) => response.json()
+    );
+    moviesMCU = [...moviesMCU, ...page2.results];
+
+    const page3 = await fetch(`https://api.themoviedb.org/3/keyword/${keyword}/movies?page=3&api_key=${ApiKey}`).then(
+      (response) => response.json()
+    );
+    moviesMCU = [...moviesMCU, ...page3.results];
+  } catch (error) {
+    return error;
+  }
+
+  return moviesMCU.filter((film) => (title ? film.title.toLowerCase().includes(title.toLowerCase()) : true));
 }
 
 export async function getMovieById(MoviesId: string) {

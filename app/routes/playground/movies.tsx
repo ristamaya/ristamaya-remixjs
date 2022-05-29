@@ -16,7 +16,6 @@ export default function Movies() {
         <Link to="/playground/movies">
           <div className="ml-[145px] text-lg font-semibold text-theme-base">Movies</div>
         </Link>
-        <div className="flex w-auto">Test</div>
       </div>
 
       <div id="MainContent" className="fixed h-[calc(100vh-40px)] w-screen overflow-y-auto overflow-x-hidden bg-theme-muted">
