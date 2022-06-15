@@ -1,13 +1,13 @@
-import { Form, useFetcher } from "@remix-run/react";
+import { useFetcher } from "@remix-run/react";
 import { useState } from "react";
 import DynamicIcon from "~/components/dynamicicon";
 
 export const themeList = [
-  { title: "Theme 1", value: "theme-cyan", bg: "bg-cyan-600" },
-  { title: "Theme 2", value: "theme-amber", bg: "bg-amber-600" },
-  { title: "Theme 3", value: "theme-indigo", bg: "bg-indigo-600" },
-  { title: "Theme 4", value: "theme-slate", bg: "bg-slate-600" },
-  { title: "Theme 5", value: "theme-stone", bg: "bg-stone-600" },
+  { title: "Cyan", value: "theme-cyan", bg: "bg-cyan-600" },
+  { title: "Amber", value: "theme-amber", bg: "bg-amber-600" },
+  { title: "indigo", value: "theme-indigo", bg: "bg-indigo-600" },
+  { title: "Slate", value: "theme-slate", bg: "bg-slate-600" },
+  { title: "Stone", value: "theme-stone", bg: "bg-stone-600" },
 ];
 
 export const ThemeSelector = () => {
@@ -30,6 +30,7 @@ export const ThemeSelector = () => {
       </button>
       {openMenu && (
         <div
+          id="ThemeSelector"
           className={`invisible absolute bottom-[40px] right-0 z-40 mx-2 h-fit max-h-[calc(100vh-74px)] w-fit -translate-x-full
           flex-row overflow-auto rounded-md border border-theme-base bg-theme-muted px-1 text-center opacity-0 shadow-md transition-all duration-500 
           hover:visible hover:translate-x-0 hover:opacity-100 peer-focus:visible peer-focus:translate-x-0 peer-focus:opacity-100`}

@@ -1,11 +1,9 @@
-import { json, LoaderFunction } from "@remix-run/node";
+import { LoaderFunction } from "@remix-run/node";
 import { Form, Link, useFetcher, useLoaderData } from "@remix-run/react";
 import { useEffect, useState } from "react";
 import DynamicIcon from "~/components/dynamicicon";
-import { Button } from "~/components/formcontrol/button";
 import { Input } from "~/components/formcontrol/input";
 import MovieCard from "~/components/moviecard";
-import { getMenusByGroup } from "~/models/menus.server";
 import { MovieKeyword } from "~/models/movies.server";
 import { getMovieByKeyword } from "~/models/movies.server";
 

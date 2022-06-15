@@ -31,7 +31,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 
 export const action: ActionFunction = async ({ request }) => {
   const themeSession = await getThemeSession(request);
-  let formData = await request.formData();
+  const formData = await request.formData();
   let { theme } = Object.fromEntries(formData);
 
   themeSession.setTheme(String(theme));
@@ -52,7 +52,7 @@ export default function App() {
         <div className={currTheme}>
           <Outlet />
 
-          <div id="ThemeSelector" className="absolute bottom-1 right-2 z-20">
+          <div className="absolute bottom-1 right-2 z-20">
             <ThemeSelector />
           </div>
         </div>

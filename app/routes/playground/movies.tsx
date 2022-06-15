@@ -18,8 +18,11 @@ export default function Movies() {
         </Link>
       </div>
 
-      <div id="MainContent" className="fixed h-[calc(100vh-40px)] w-screen overflow-y-auto overflow-x-hidden bg-theme-muted">
-        <Outlet />;
+      <div
+        id="MainContent"
+        className="fixed h-[calc(100vh-40px)] w-screen overflow-y-auto overflow-x-hidden bg-theme-muted"
+      >
+        <Outlet />
         <div className="m-auto my-1 flex w-full items-center justify-center">
           <span className="flex text-sm text-theme-base">Movies API By </span>
           <a target={"_blank"} href="https://developers.themoviedb.org/3">
