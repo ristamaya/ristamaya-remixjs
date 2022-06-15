@@ -57,7 +57,9 @@ export default function MoviesIndex() {
   return (
     <>
       <div className="relative flex w-full justify-center text-center">
-        <h1 className="mt-2 mb-5 text-xl font-semibold text-theme-strong md:text-3xl">Marvel Cinematic Universe</h1>
+        <h1 className="mt-2 mb-5 text-xl font-semibold text-theme-strong md:text-3xl">
+          Marvel Cinematic Universe
+        </h1>
         <div className="absolute -top-2 right-1 w-auto">
           <Form reloadDocument method="get">
             <div className="relative flex items-center">
@@ -71,9 +73,9 @@ export default function MoviesIndex() {
       </div>
 
       <div className="mx-auto inline-flex flex-wrap justify-center bg-theme-muted px-3">
-        {movies.map((item) => (
+        {movies.map((item, index) => (
           <Link
-            key={item.id}
+            key={index}
             title={item.title}
             to={item.id.toString()}
             className="group relative m-1 flex h-fit w-fit cursor-pointer overflow-hidden rounded-[4px]"

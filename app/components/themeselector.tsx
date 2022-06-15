@@ -1,12 +1,31 @@
-import React, { useState, useContext } from "react";
+import { Form, useFetcher } from "@remix-run/react";
+import { useState } from "react";
 import DynamicIcon from "~/components/dynamicicon";
 
-export const ThemeSelector = ({ theme }: any) => {
+export const themeList = [
+  { title: "Theme 1", value: "theme-cyan", bg: "bg-cyan-600" },
+  { title: "Theme 2", value: "theme-amber", bg: "bg-amber-600" },
+  { title: "Theme 3", value: "theme-indigo", bg: "bg-indigo-600" },
+  { title: "Theme 4", value: "theme-slate", bg: "bg-slate-600" },
+  { title: "Theme 5", value: "theme-stone", bg: "bg-stone-600" },
+];
+
+export const ThemeSelector = () => {
   const [openMenu, setOpenMenu] = useState(true);
+  const fetchTheme = useFetcher();
+
+  const clickhandler = (value: string) => {
+    fetchTheme.submit({ theme: value });
+  };
 
   return (
     <div className="relative m-3 h-fit w-fit rounded-full border border-theme-base bg-theme-muted p-1">
-      <button onClick={(e) => setOpenMenu(true)} className="peer relative flex h-fit w-fit rounded-full hover:opacity-80">
+      <button
+        onClick={(e) => {
+          setOpenMenu(true);
+        }}
+        className="peer relative flex h-fit w-fit cursor-pointer rounded-full hover:opacity-80"
+      >
         <DynamicIcon icon="FiSun" className="h-7 w-7" />
       </button>
       {openMenu && (
@@ -16,47 +35,25 @@ export const ThemeSelector = ({ theme }: any) => {
           hover:visible hover:translate-x-0 hover:opacity-100 peer-focus:visible peer-focus:translate-x-0 peer-focus:opacity-100`}
           aria-hidden={true}
         >
-          <span className="text-sm font-semibold text-theme-strong">Theme Color</span>
-          <button
-            onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
-              theme("theme-cyan");
-            }}
-            className="text-md my-1 flex w-24 cursor-pointer justify-center rounded-sm bg-cyan-600 p-1 hover:opacity-80"
-          >
-            Cyan
-          </button>
-          <button
-            onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
-              theme("theme-amber");
-            }}
-            className="text-md my-1 flex w-24 cursor-pointer justify-center rounded-sm bg-amber-600 p-1 hover:opacity-80"
-          >
-            Amber
-          </button>
-          <button
-            onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
-              theme("theme-indigo");
-            }}
-            className="text-md my-1 flex w-24 cursor-pointer justify-center rounded-sm bg-indigo-600 p-1 hover:opacity-80"
-          >
-            Indigo
-          </button>
-          <button
-            onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
-              theme("theme-slate");
-            }}
-            className="text-md my-1 flex w-24 cursor-pointer justify-center rounded-sm bg-slate-600 p-1 hover:opacity-80"
-          >
-            Slate
-          </button>
-          <button
-            onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
-              theme("theme-stone");
-            }}
-            className="text-md my-1 flex w-24 cursor-pointer justify-center rounded-sm bg-stone-600 p-1 hover:opacity-80"
-          >
-            Stone
-          </button>
+          <fetchTheme.Form method="post">
+            <span className="text-sm font-semibold text-theme-strong">Theme Color</span>
+            <div>
+              {themeList.map((item, index) => (
+                <button
+                  key={index}
+                  type="submit"
+                  name="theme"
+                  value={item.value}
+                  onClick={(e) => {
+                    clickhandler(item.value);
+                  }}
+                  className={`${item.bg} text-md my-1 flex w-24 cursor-pointer justify-center rounded-sm p-1 hover:opacity-80`}
+                >
+                  {item.title}
+                </button>
+              ))}
+            </div>
+          </fetchTheme.Form>
         </div>
       )}
     </div>

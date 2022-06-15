@@ -1629,6 +1629,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
 .ease-out {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
@@ -1695,6 +1699,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: #7c8083;
 }
 
+#ThemeSelector::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+#ThemeSelector::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+#ThemeSelector::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #7c8083;
+}
+
 /* --->Scroll Bar<--- */
 
 .placeholder\:text-theme-muted::-moz-placeholder {
@@ -1721,6 +1739,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   visibility: visible;
 }
 
+.hover\:w-full:hover {
+  width: 100%;
+}
+
 .hover\:-translate-x-0:hover {
   --tw-translate-x: -0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1728,11 +1750,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .hover\:translate-x-0:hover {
   --tw-translate-x: 0px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.hover\:translate-x-full:hover {
-  --tw-translate-x: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1797,9 +1814,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   visibility: visible;
 }
 
-.peer:hover ~ .peer-hover\:translate-x-full {
-  --tw-translate-x: 100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+.peer:hover ~ .peer-hover\:w-full {
+  width: 100%;
 }
 
 .peer:hover ~ .peer-hover\:opacity-100 {

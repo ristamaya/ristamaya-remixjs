@@ -48,12 +48,15 @@ export default function Playground() {
             <div className="relative w-full cursor-pointer">
               <div className="peer flex items-center justify-between text-theme-base">
                 <MenuItem to="/home" title="Home" effect="bottom" icon="FiHome" />
-                <DynamicIcon icon="FiChevronRight" className="absolute right-0 h-5 w-5 text-theme-base" />
+                <DynamicIcon
+                  icon="FiChevronRight"
+                  className="absolute right-0 h-5 w-5 text-theme-base"
+                />
               </div>
               <div
-                className="invisible absolute top-0 right-0 grid -translate-x-full grid-cols-1 rounded-r-sm bg-theme-fill
-                bg-opacity-95 p-2 text-theme-base opacity-0 transition-all duration-300 ease-in-out
-                hover:visible hover:translate-x-full hover:opacity-100 peer-hover:visible peer-hover:translate-x-full peer-hover:opacity-100"
+                className="invisible absolute top-0 right-0 grid w-0 translate-x-full grid-cols-1 overflow-x-hidden rounded-r-sm
+                bg-theme-fill bg-opacity-95 p-2 text-theme-base opacity-0 transition-all duration-300 ease-in
+                hover:visible hover:w-full hover:opacity-100 peer-hover:visible peer-hover:w-full peer-hover:opacity-100"
               >
                 <MenuItem title="Playground" to="/playground" effect="bottom" icon="FiGrid" />
                 <MenuItem title="Blog" to="/blog" effect="bottom" icon="FiBook" />
