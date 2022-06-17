@@ -7,15 +7,28 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model users {
-  userid       String    @id @default(auto()) @map("_id") @db.ObjectId
-  useremail    String    @unique
-  userpassword String
-  userstatus   String    @default("active")
-  maxsession   BigInt?
-  createby     String?
-  createat     DateTime  @default(now())
-  updateat     DateTime? @updatedAt
+// CORE APP -------------------------------------------------------------------------------------------------------
+type lovvalue {
+  seq      Int
+  value    String
+  descr    String
+  status   String
+  createby String?
+  createat DateTime?
+  updateby String?
+  updateat DateTime?
+}
+
+model lov {
+  lovid    String     @id @default(auto()) @map("_id") @db.ObjectId
+  key      String
+  descr    String
+  values   lovvalue[]
+  status   String
+  createby String?
+  createat DateTime?  @default(now())
+  updateby String?
+  updateat DateTime?  @updatedAt
 }
 
 model menus {
@@ -32,6 +45,18 @@ model menus {
   createby String
 }
 
+model users {
+  userid       String    @id @default(auto()) @map("_id") @db.ObjectId
+  useremail    String    @unique
+  userpassword String
+  userstatus   String    @default("active")
+  maxsession   BigInt?
+  createby     String?
+  createat     DateTime  @default(now())
+  updateby     String?
+  updateat     DateTime? @updatedAt
+}
+
 model visitors {
   visitorid    String   @id @default(auto()) @map("_id") @db.ObjectId
   IPv4         String?
@@ -45,6 +70,7 @@ model visitors {
   visitat      DateTime @default(now())
 }
 
+// -------------------------------------------------------------------------------------------------------
 type peopleid {
   idtype String?
   idno   String?

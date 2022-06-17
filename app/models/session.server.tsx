@@ -1,7 +1,7 @@
 import { users } from "@prisma/client";
 import { createCookieSessionStorage, redirect } from "@remix-run/node";
 import invariant from "tiny-invariant";
-import { getUserById } from "./users.server";
+import { getUserById } from "./setup-user/users.server";
 
 invariant(process.env.SESSION_SECRET, "SESSION_SECRET must be set");
 
@@ -40,7 +40,10 @@ export async function getUser(request: Request): Promise<null | users> {
   throw await logout(request);
 }
 
-export async function requireUserId(request: Request, redirectTo: string = new URL(request.url).pathname): Promise<string> {
+export async function requireUserId(
+  request: Request,
+  redirectTo: string = new URL(request.url).pathname
+): Promise<string> {
   const userId = await getUserId(request);
   if (!userId) {
     const searchParams = new URLSearchParams([["redirectTo", redirectTo]]);

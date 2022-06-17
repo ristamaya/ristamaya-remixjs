@@ -1,7 +1,7 @@
 import { json, MetaFunction } from "@remix-run/node";
 import { Link, Outlet, useLoaderData } from "@remix-run/react";
 import Menubar from "~/components/menubar";
-import { getMenusByGroup } from "~/models/menus.server";
+import { getMenusByGroup } from "~/models/setup-menu/menus.server";
 
 export const meta: MetaFunction = () => {
   return {
@@ -25,7 +25,10 @@ export default function Ga() {
           <div className="ml-[145px] text-lg font-semibold text-theme-base">GA</div>
         </Link>
       </div>
-      <div id="MainContent" className="fixed h-[calc(100%-40px)] w-full overflow-auto bg-theme-muted">
+      <div
+        id="MainContent"
+        className="fixed h-[calc(100%-40px)] w-full overflow-auto bg-theme-muted"
+      >
         <Outlet />
       </div>
     </>

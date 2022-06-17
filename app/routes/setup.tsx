@@ -1,30 +1,29 @@
 import { json, MetaFunction } from "@remix-run/node";
 import { Outlet, useLoaderData } from "@remix-run/react";
-import type { menus } from "@prisma/client";
-import { getMenusByGroup } from "~/models/setup-menu/menus.server";
-import MenuItem from "~/components/menuitem";
 import DynamicIcon from "~/components/dynamicicon";
 import Hiddensidebar from "~/components/hiddensidebar";
+import MenuItem from "~/components/menuitem";
+import { getMenusByGroup } from "~/models/setup-menu/menus.server";
 
 export const meta: MetaFunction = () => {
   return {
-    title: "Ristamaya | Playground",
+    title: "Ristamaya | Setup",
     description: "remix js react react.js react js web development application",
   };
 };
 
 export async function loader() {
-  const menus = await getMenusByGroup("playground");
+  const menus = await getMenusByGroup("setup");
 
   return json(menus);
 }
 
-export default function Playground() {
-  const menudata: menus[] = useLoaderData();
+export default function Core() {
+  const menudata = useLoaderData();
 
   return (
-    <div>
-      <Hiddensidebar title="Playground" menudata={menudata}>
+    <>
+      <Hiddensidebar title="Setup" menudata={menudata}>
         <div className="relative w-full cursor-pointer">
           <div className="peer flex items-center justify-between text-theme-base">
             <MenuItem to="/home" title="Home" effect="bottom" icon="FiHome" />
@@ -46,6 +45,6 @@ export default function Playground() {
       </Hiddensidebar>
 
       <Outlet />
-    </div>
+    </>
   );
 }

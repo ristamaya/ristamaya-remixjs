@@ -2,7 +2,7 @@ import { json, MetaFunction } from "@remix-run/node";
 import { Outlet, useLoaderData } from "@remix-run/react";
 import Menubar from "~/components/menubar";
 import { MenuIcon } from "~/components/menuicon";
-import { getMenusByGroup } from "~/models/menus.server";
+import { getMenusByGroup } from "~/models/setup-menu/menus.server";
 
 export const meta: MetaFunction = () => {
   return {

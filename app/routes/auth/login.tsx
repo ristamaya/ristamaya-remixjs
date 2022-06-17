@@ -4,7 +4,7 @@ import * as React from "react";
 import { Button } from "~/components/formcontrol/button";
 import { Input } from "~/components/formcontrol/input";
 import { createUserSession, getUserId } from "~/models/session.server";
-import { verifyLogin } from "~/models/users.server";
+import { verifyLogin } from "~/models/setup-user/users.server";
 import { validateEmail } from "~/models/utils.server";
 
 export const loader: LoaderFunction = async ({ request }) => {
