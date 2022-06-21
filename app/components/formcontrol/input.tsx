@@ -3,7 +3,7 @@ import DynamicIcon from "~/components/dynamicicon";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   ref?: {};
-  label: string;
+  label?: string;
   className: string;
   inputData?: string[];
   errorMessage?: string;
@@ -12,17 +12,17 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ label, className, inputData, errorMessage, ...props }, ref) => {
     const [openData, setOpenData] = useState(false);
-    const [value, setValue] = useState("");
+    const [value, setValue] = useState(String(props.value));
 
     return (
-      <div className="relative m-3 flex h-auto w-auto items-center justify-center">
+      <div className="relative flex h-fit w-fit items-center justify-center">
         <input
           {...props}
           value={value}
           onChange={(e) => setValue(e.target.value)}
           ref={ref}
-          className={`min-w-10 min-h-8 peer relative z-0 my-1 rounded-[4px] border bg-transparent px-1 pt-1 pb-1 text-theme-base outline-none placeholder:text-theme-muted invalid:border-theme-warning disabled:border-theme-base/50 
-          ${className} 
+          className={`min-w-10 min-h-8 peer relative z-0 border bg-transparent px-1 pt-1 pb-1 text-theme-base outline-none placeholder:text-theme-muted invalid:border-theme-warning disabled:border-theme-base/50 
+          ${className}
           ${errorMessage ? "border-theme-warning" : "border-theme-base"}`}
         ></input>
 
@@ -45,7 +45,10 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             className={`absolute right-1 h-fit w-fit cursor-pointer border-l border-theme-base bg-theme-muted text-theme-base`}
             aria-hidden={true}
           >
-            <DynamicIcon icon="FiChevronLeft" className={`${openData && "-rotate-90"} h-6 w-6  transition duration-300`} />
+            <DynamicIcon
+              icon="FiChevronLeft"
+              className={`${openData && "-rotate-90"} h-6 w-6  transition duration-300`}
+            />
           </span>
         )}
 

@@ -19,6 +19,8 @@
     --color-btn-base: 99, 102, 241;
     --color-btn-hover: 238, 242, 255;
     --color-btn-inverted: 51, 65, 85;
+    --color-switch-on: 99, 102, 241;
+    --color-switch-off: 224, 231, 255;
   }
   .theme-amber {
     --color-fill: 245, 158, 11;
@@ -35,6 +37,8 @@
     --color-btn-base: 245, 158, 11;
     --color-btn-hover: 245, 158, 11;
     --color-btn-inverted: 51, 65, 85;
+    --color-switch-on: 245, 158, 11;
+    --color-switch-off: 254, 243, 199;
   }
   .theme-cyan {
     --color-fill: 34, 211, 238;
@@ -51,6 +55,8 @@
     --color-btn-base: 34, 211, 238;
     --color-btn-hover: 238, 242, 255;
     --color-btn-inverted: 99, 102, 241;
+    --color-switch-on: 34, 211, 238;
+    --color-switch-off: 236, 254, 255;
   }
   .theme-slate {
     --color-fill: 51, 65, 85;
@@ -67,6 +73,8 @@
     --color-btn-base: 51, 65, 85;
     --color-btn-hover: 238, 242, 255;
     --color-btn-inverted: 99, 102, 241;
+    --color-switch-on: 51, 65, 85;
+    --color-switch-off: 148, 163, 184;
   }
   .theme-stone {
     --color-fill: 87, 83, 78;
@@ -83,6 +91,8 @@
     --color-btn-base: 87, 83, 78;
     --color-btn-hover: 87, 83, 78;
     --color-btn-inverted: 99, 102, 241;
+    --color-switch-on: 87, 83, 78;
+    --color-switch-off: 168, 162, 158;
   }
 }
 /* ---> THEME <--- */

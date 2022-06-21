@@ -22,6 +22,8 @@ module.exports = {
           "btn-base": withOpacity("--color-btn-base"),
           "btn-hover": withOpacity("--color-btn-hover"),
           "btn-inverted": withOpacity("--color-btn-inverted"),
+          "sw-on": withOpacity("--color-switch-on"),
+          "sw-off": withOpacity("--color-switch-off"),
         },
       },
       textColor: {

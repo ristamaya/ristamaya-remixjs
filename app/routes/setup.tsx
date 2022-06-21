@@ -23,7 +23,7 @@ export default function Core() {
 
   return (
     <>
-      <Hiddensidebar title="Setup" menudata={menudata}>
+      <Hiddensidebar title="Setup App" menudata={menudata}>
         <div className="relative w-full cursor-pointer">
           <div className="peer flex items-center justify-between text-theme-base">
             <MenuItem to="/home" title="Home" effect="bottom" icon="FiHome" />

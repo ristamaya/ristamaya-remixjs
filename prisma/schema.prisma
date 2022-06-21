@@ -12,7 +12,7 @@ type lovvalue {
   seq      Int
   value    String
   descr    String
-  status   String
+  active   String
   createby String?
   createat DateTime?
   updateby String?
@@ -24,7 +24,7 @@ model lov {
   key      String
   descr    String
   values   lovvalue[]
-  status   String
+  active   String
   createby String?
   createat DateTime?  @default(now())
   updateby String?
