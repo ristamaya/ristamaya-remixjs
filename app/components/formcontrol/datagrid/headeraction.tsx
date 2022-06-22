@@ -11,9 +11,9 @@ export default function HeaderAction() {
         <button className="flex items-center rounded-sm px-1 py-[6px] hover:bg-theme-btn-hover">
           <DynamicIcon icon="MdAddBox" className="h-5 w-5" /> Add New
         </button>
-        <button className="flex items-center rounded-sm px-1 py-[6px] hover:bg-theme-btn-hover">
+        {/* <button className="flex items-center rounded-sm px-1 py-[6px] hover:bg-theme-btn-hover">
           <DynamicIcon icon="MdSave" className="h-5 w-5" /> Save
-        </button>
+        </button> */}
         <div className="relative flex">
           <button
             onClick={(e) => setOpenExport(!openExport)}
@@ -24,7 +24,7 @@ export default function HeaderAction() {
           </button>
           {openExport && (
             <div
-              className={`absolute bottom-0 h-fit w-full translate-y-full border border-theme-base bg-theme-muted`}
+              className={`absolute bottom-0 h-fit w-full translate-y-full border border-t-0 border-theme-base bg-theme-muted drop-shadow-md`}
             >
               <button className="flex w-full items-center rounded-sm px-1 py-[6px] hover:bg-theme-btn-hover">
                 <DynamicIcon icon="MdPictureAsPdf" className="h-5 w-5" /> pdf

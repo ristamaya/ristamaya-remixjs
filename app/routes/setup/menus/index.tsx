@@ -3,7 +3,6 @@ import { getAllMenus } from "~/models/setup-menu/menus.server";
 import { json } from "@remix-run/node";
 import { menus } from "@prisma/client";
 import Datagrid, { dataGridProps } from "~/components/formcontrol/datagrid";
-import DynamicIcon from "~/components/dynamicicon";
 
 export async function loader() {
   const menus = await getAllMenus();
@@ -39,7 +38,8 @@ export default function Index() {
         title="List of menus"
         dataGridProps={dataGridProps}
         tableData={menuData}
-        action="edit"
+        primaryKey="menuid"
+        action={true}
       />
     </div>
   );
