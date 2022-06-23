@@ -26,8 +26,8 @@ export default function IconField({ name, value, enable }: props) {
           name={name}
           value={itemValue}
           onChange={(e) => setItemValue(e.target.value)}
-          className="relative w-fit bg-transparent outline-none"
           disabled={true}
+          className="relative w-fit bg-transparent outline-none"
         ></input>
 
         {enable && (

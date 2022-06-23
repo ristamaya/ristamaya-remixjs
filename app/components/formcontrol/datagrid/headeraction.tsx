@@ -24,7 +24,7 @@ export default function HeaderAction() {
           </button>
           {openExport && (
             <div
-              className={`absolute bottom-0 h-fit w-full translate-y-full border border-t-0 border-theme-base bg-theme-muted drop-shadow-md`}
+              className={`absolute z-20 bottom-0 h-fit w-full translate-y-full border border-t-0 border-theme-base bg-theme-muted drop-shadow-md`}
             >
               <button className="flex w-full items-center rounded-sm px-1 py-[6px] hover:bg-theme-btn-hover">
                 <DynamicIcon icon="MdPictureAsPdf" className="h-5 w-5" /> pdf

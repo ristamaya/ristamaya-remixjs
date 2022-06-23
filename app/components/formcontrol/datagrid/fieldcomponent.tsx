@@ -11,20 +11,26 @@ interface props {
 }
 
 export default function FieldComponent({ prop, edit, action }: props) {
-  if (prop.key === "ActionControl") {
+  if (prop.name === "ActionControl") {
     if (action === "none") {
       return (
         <div className="flex gap-1 px-1">
           <button
-            className="px-1 hover:bg-theme-btn-hover"
             onClick={(e) => {
               //@ts-ignore
               prop.handleEditClick(prop.value, "edit");
             }}
+            className="px-1 hover:bg-theme-btn-hover"
           >
             <DynamicIcon icon="MdModeEdit" className="h-5 w-5" />
           </button>
-          <button className="px-1 hover:bg-theme-btn-hover">
+          <button
+            onClick={(e) => {
+              //@ts-ignore
+              prop.handleDeleteClick(prop.value, "edit");
+            }}
+            className="px-1 hover:bg-theme-btn-hover"
+          >
             <DynamicIcon icon="MdDeleteForever" className="h-5 w-5" />
           </button>
         </div>
@@ -36,12 +42,18 @@ export default function FieldComponent({ prop, edit, action }: props) {
             className="px-1 hover:bg-theme-btn-hover"
             onClick={(e) => {
               //@ts-ignore
-              prop.handleEditClick("", "none");
+              prop.handleCancelClick(prop.value, "none");
             }}
           >
             <DynamicIcon icon="MdCancel" className="h-5 w-5" />
           </button>
-          <button className="px-1 hover:bg-theme-btn-hover">
+          <button
+            onClick={(e) => {
+              //@ts-ignore
+              prop.handleSaveClick(prop.value, "none");
+            }}
+            className="px-1 hover:bg-theme-btn-hover"
+          >
             <DynamicIcon icon="MdSave" className="h-5 w-5" />
           </button>
         </div>

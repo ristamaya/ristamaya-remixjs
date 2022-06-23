@@ -18,7 +18,6 @@ export type dataGridProps = {
 
 export type rowProps = {
   pk: string;
-  key: string;
   name: string;
   value: string;
   hidden?: boolean;
@@ -48,6 +47,21 @@ export default function Datagrid({ title, dataGridProps, tableData, primaryKey, 
     setActionMode(action);
   };
 
+  const handleSaveClick = (value: string, action: string) => {
+    setPrimaryKeyValue("NONE");
+    setActionMode(action);
+  };
+
+  const handleCancelClick = (value: string, action: string) => {
+    setPrimaryKeyValue("NONE");
+    setActionMode(action);
+  };
+
+  const handleDeleteClick = (value: string, action: string) => {
+    setPrimaryKeyValue("NONE");
+    setActionMode(action);
+  };
+
   const Data = tableData.map((item, index) => {
     let rowData: rowProps[] = [];
     let i = 0;
@@ -55,19 +69,20 @@ export default function Datagrid({ title, dataGridProps, tableData, primaryKey, 
     if (action) {
       rowData.push({
         pk: item[primaryKey],
-        key: "ActionControl",
         name: "ActionControl",
         value: item[primaryKey],
         hidden: false,
         fieldType: "button",
         handleEditClick: handleEditClick,
+        handleSaveClick: handleSaveClick,
+        handleCancelClick: handleCancelClick,
+        handleDeleteClick: handleDeleteClick,
       });
     }
 
     for (const key in item) {
       rowData.push({
         pk: item[primaryKey],
-        key: dataGridProps[i].header,
         name: dataGridProps[i].field,
         value: item[dataGridProps[i].field],
         hidden: dataGridProps[i].hidden,
@@ -83,9 +98,9 @@ export default function Datagrid({ title, dataGridProps, tableData, primaryKey, 
         {rowData.map((data, index) => (
           <td
             key={index}
-            data-heading={data.key}
-            className={`${primaryKeyValue === data.pk && "bg-theme-fill/30"} 
-            border-b border-theme-base p-1 text-xs`}
+            className={`${
+              primaryKeyValue === data.pk && "bg-theme-fill/30"
+            } border-b border-theme-base p-1 text-xs`}
             hidden={data.hidden}
           >
             {primaryKeyValue === data.pk ? (

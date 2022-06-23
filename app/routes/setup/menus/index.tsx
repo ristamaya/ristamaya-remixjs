@@ -17,11 +17,11 @@ export default function Index() {
     { header: "Menu Id", field: "menuid", hidden: true },
     { header: "Group", field: "group" },
     { header: "Create By", field: "createby", hidden: true },
-    { header: "Parent", field: "parent", hidden: false },
+    { header: "Parent", field: "parent", hidden: true },
     { header: "Type", field: "type", hidden: false },
     { header: "Icon", field: "icon", fieldType: "icon" },
     { header: "Path", field: "path" },
-    { header: "Path Type", field: "pathtype", hidden: false },
+    { header: "Path Type", field: "pathtype", hidden: true },
     { header: "Order", field: "order" },
     {
       header: "Status",
