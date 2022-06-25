@@ -5,7 +5,7 @@ import { getMenusByGroup } from "~/models/setup-menu/menus.server";
 export const meta: MetaFunction = () => {
   return {
     title: "Text To Speech",
-    description: "Free Online text to speech with unlimited words",
+    description: "Free Online text to speech unlimited words",
   };
 };
 

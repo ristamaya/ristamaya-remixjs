@@ -57,20 +57,20 @@ const handleTextToSpeech = async (
   }
 
   if (text === "") {
-    await speekSentence("gue kudu ngomong apaan?", lang, 1, 0.4, 1.1, synth);
+    await speekSentence("gue kudu ngomong apa an bro", lang, 1, 0.2, 1.2, synth);
     return;
   }
 
   const splitText = text.split(/[\r?\n,.]/);
 
   for (let speek of splitText) {
-    if (speek.length > 200) {
+    if (speek.length > 195) {
       await speekSentence(
-        "gak gitu juga kali. kira-kira aja bro, mentang-mentang gue robot, gak dikasih nafas ngomong gak pake titik koma. kasih tanda baca lah.",
+        "kira-kira aja bro, kasih tanda baca lah. mentang-mentang gue robot, ngomong gak dikasih nafas, gak pake titik koma.",
         "id-ID",
         1,
-        0.4,
-        1.1,
+        0.2,
+        1.2,
         synth
       );
       return;
@@ -115,14 +115,14 @@ export default function TtsIndex() {
             <label className="w-16 text-theme-base">Volume</label>
             <input
               type="range"
-              min={0.1}
+              min={0}
               max={1}
-              step={0.04}
+              step={0.02}
               value={volume}
               onChange={(e) => setVolume(Number(e.target.value))}
               className="w-52"
             ></input>
-            <label className="w-9 text-theme-base">{volume}</label>
+            <label className="w-9 text-theme-base">{Math.round(volume * 100)}</label>
           </div>
 
           <div className="flex">
@@ -131,7 +131,7 @@ export default function TtsIndex() {
               type="range"
               min={0}
               max={2}
-              step={0.1}
+              step={0.02}
               value={rate}
               onChange={(e) => setRate(Number(e.target.value))}
               className="w-52"
@@ -145,7 +145,7 @@ export default function TtsIndex() {
               type="range"
               min={0}
               max={2}
-              step={0.1}
+              step={0.02}
               value={pitch}
               onChange={(e) => setPitch(Number(e.target.value))}
               className="w-52"
