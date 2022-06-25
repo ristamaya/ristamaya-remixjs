@@ -89,7 +89,7 @@ export default function Join() {
             name="useremail"
             label="Email"
             autoComplete="new-useremail"
-            className="w-full"
+            className="my-4 w-full rounded-sm"
             errorMessage={actionData?.errors?.useremail}
           />
           <Input
@@ -99,7 +99,7 @@ export default function Join() {
             name="password"
             label="Password"
             errorMessage={actionData?.errors?.password}
-            className="w-full"
+            className="my-4 w-full rounded-sm"
           />
           <Input
             ref={userpasswordRef}
@@ -109,7 +109,7 @@ export default function Join() {
             label="Retype Password"
             autoComplete="new-password"
             errorMessage={actionData?.errors?.userpassword}
-            className="w-full"
+            className="my-4 w-full rounded-sm"
           />
 
           <input type="hidden" name="redirectTo" value={redirectTo} />

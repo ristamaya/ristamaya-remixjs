@@ -61,8 +61,13 @@ export default function MoviesIndex() {
         <div className="absolute -top-2 right-1 w-auto">
           <Form reloadDocument method="get">
             <div className="relative flex items-center">
-              <Input className="w-32 md:w-56" label="" placeholder="Search" name="title" />
-              <button className="absolute right-5 z-10" type="submit">
+              <Input
+                className="my-4 w-32 rounded-md md:w-56"
+                label=""
+                placeholder="Search"
+                name="title"
+              />
+              <button className="absolute right-2 z-10" type="submit">
                 <DynamicIcon icon="MdSearch" className="h-6 w-6 text-theme-base" />
               </button>
             </div>

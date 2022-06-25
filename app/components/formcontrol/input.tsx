@@ -12,7 +12,9 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ label, className, inputData, errorMessage, ...props }, ref) => {
     const [openData, setOpenData] = useState(false);
-    const [value, setValue] = useState(String(props.value));
+    const [value, setValue] = useState<any>(() => {
+      !props.value && "";
+    });
 
     return (
       <div className="relative flex h-fit w-fit items-center justify-center">

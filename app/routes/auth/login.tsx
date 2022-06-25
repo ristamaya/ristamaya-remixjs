@@ -90,7 +90,7 @@ export default function LoginPage() {
           autoComplete="email"
           aria-invalid={actionData?.errors?.email ? true : undefined}
           aria-describedby="email-error"
-          className="w-full"
+          className="my-4 w-full rounded-sm"
         />
         {actionData?.errors?.email && (
           <div className="pt-1 text-red-700" id="email-error">
@@ -107,7 +107,7 @@ export default function LoginPage() {
           autoComplete="new-password"
           aria-invalid={actionData?.errors?.password ? true : undefined}
           aria-describedby="password-error"
-          className="w-full"
+          className="my-4 w-full rounded-sm"
         />
         {actionData?.errors?.password && (
           <div className="pt-1 text-red-700" id="password-error">
