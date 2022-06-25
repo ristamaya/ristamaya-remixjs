@@ -83,6 +83,7 @@ const handleTextToSpeech = async (
 export default function TtsIndex() {
   const [lang, setLang] = useState("id-ID");
   const [text, setText] = useState("Halo apa kabar dunia");
+  const [delay, setDelay] = useState(0);
   const [volume, setVolume] = useState(0.5);
   const [rate, setRate] = useState(1);
   const [pitch, setPitch] = useState(1);
@@ -112,7 +113,7 @@ export default function TtsIndex() {
 
         <div className="m-2 flex-row">
           <div className="flex">
-            <label className="w-16 text-theme-base">Volume</label>
+            <label className="w-28 text-theme-base">Volume</label>
             <input
               type="range"
               min={0}
@@ -120,13 +121,13 @@ export default function TtsIndex() {
               step={0.02}
               value={volume}
               onChange={(e) => setVolume(Number(e.target.value))}
-              className="w-64"
+              className="mr-2 w-64"
             ></input>
             <label className="w-9 text-theme-base">{Math.round(volume * 100)}</label>
           </div>
 
           <div className="flex">
-            <label className="w-16 text-theme-base">Rate</label>
+            <label className="w-28 text-theme-base">Rate</label>
             <input
               type="range"
               min={0}
@@ -134,13 +135,13 @@ export default function TtsIndex() {
               step={0.02}
               value={rate}
               onChange={(e) => setRate(Number(e.target.value))}
-              className="w-64"
+              className="mr-2 w-64"
             ></input>
             <label className="w-9 text-theme-base">{rate}</label>
           </div>
 
           <div className="flex">
-            <label className="w-16 text-theme-base">Pitch</label>
+            <label className="w-28 text-theme-base">Pitch</label>
             <input
               type="range"
               min={0.02}
@@ -148,17 +149,36 @@ export default function TtsIndex() {
               step={0.02}
               value={pitch}
               onChange={(e) => setPitch(Number(e.target.value))}
-              className="w-64"
+              className="mr-2 w-64"
             ></input>
             <label className="w-9 text-theme-base">{pitch}</label>
+          </div>
+
+          <div className="flex">
+            <label className="w-28 text-theme-base">Delay Start</label>
+            <select
+              className="mr-2 rounded-sm border border-theme-base bg-transparent text-theme-base outline-none"
+              onChange={(e) => setDelay(Number(e.currentTarget.value))}
+              defaultValue={0}
+            >
+              <option value={0}>0</option>
+              <option value={1000}>1</option>
+              <option value={2000}>2</option>
+              <option value={3000}>3</option>
+              <option value={4000}>4</option>
+              <option value={5000}>5</option>
+            </select>
+            <label className="w-9 text-theme-base">Seconds</label>
           </div>
         </div>
 
         <Button
           label="Play"
-          onClick={(e) =>
-            handleTextToSpeech(text, lang, volume, pitch, rate, window.speechSynthesis)
-          }
+          onClick={(e) => {
+            setTimeout(() => {
+              handleTextToSpeech(text, lang, volume, pitch, rate, window.speechSynthesis);
+            }, delay);
+          }}
           className="h-fit w-fit"
         />
       </div>
