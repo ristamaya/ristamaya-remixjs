@@ -115,9 +115,9 @@ export default function TtsIndex() {
             <label className="w-16 text-theme-base">Volume</label>
             <input
               type="range"
-              min={0}
+              min={0.1}
               max={1}
-              step={0.1}
+              step={0.04}
               value={volume}
               onChange={(e) => setVolume(Number(e.target.value))}
               className="w-52"

@@ -4,8 +4,8 @@ import { getMenusByGroup } from "~/models/setup-menu/menus.server";
 
 export const meta: MetaFunction = () => {
   return {
-    title: "Ristamaya | Text To Speech",
-    description: "remix js react react.js react js web development application",
+    title: "Text To Speech",
+    description: "Free Online text to speech with unlimited words",
   };
 };
 
