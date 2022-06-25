@@ -1120,10 +1120,6 @@ video {
   max-width: 24rem;
 }
 
-.max-w-full {
-  max-width: 100%;
-}
-
 .max-w-7xl {
   max-width: 80rem;
 }

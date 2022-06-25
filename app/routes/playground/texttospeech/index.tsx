@@ -120,7 +120,7 @@ export default function TtsIndex() {
               step={0.02}
               value={volume}
               onChange={(e) => setVolume(Number(e.target.value))}
-              className="w-52"
+              className="w-64"
             ></input>
             <label className="w-9 text-theme-base">{Math.round(volume * 100)}</label>
           </div>
@@ -134,7 +134,7 @@ export default function TtsIndex() {
               step={0.02}
               value={rate}
               onChange={(e) => setRate(Number(e.target.value))}
-              className="w-52"
+              className="w-64"
             ></input>
             <label className="w-9 text-theme-base">{rate}</label>
           </div>
@@ -143,12 +143,12 @@ export default function TtsIndex() {
             <label className="w-16 text-theme-base">Pitch</label>
             <input
               type="range"
-              min={0}
+              min={0.02}
               max={2}
               step={0.02}
               value={pitch}
               onChange={(e) => setPitch(Number(e.target.value))}
-              className="w-52"
+              className="w-64"
             ></input>
             <label className="w-9 text-theme-base">{pitch}</label>
           </div>

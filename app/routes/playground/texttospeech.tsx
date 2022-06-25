@@ -20,7 +20,7 @@ export default function TTS() {
   return (
     <>
       <div className="flex h-10 w-screen items-center justify-between bg-theme-fill px-2 shadow-lg">
-        <Link to="/playground/tts">
+        <Link to="/playground/texttospeech">
           <div className="ml-[145px] text-lg font-semibold text-theme-base">Text to speech</div>
         </Link>
       </div>
