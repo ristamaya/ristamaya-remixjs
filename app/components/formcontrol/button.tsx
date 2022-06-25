@@ -16,7 +16,7 @@ export const Button: ForwardRefRenderFunction<HTMLInputElement, ButtonProps> = (
   return (
     <button
       {...props}
-      className={`group relative m-2 flex min-h-fit min-w-fit items-center justify-center overflow-hidden rounded-md bg-theme-btn-base px-4 py-2 text-theme-base outline-none active:text-theme-inverted ${className}`}
+      className={`group relative m-2 min-h-fit min-w-fit items-center justify-center overflow-hidden rounded-md bg-theme-btn-base px-4 py-2 text-theme-base outline-none active:text-theme-inverted ${className}`}
     >
       {label}
       <span className={`left-0 ${spanClass}`}></span>

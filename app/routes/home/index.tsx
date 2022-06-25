@@ -31,7 +31,7 @@ export default function Home() {
     <>
       <div className="h-[calc(100vh-64px)] w-full bg-theme-fill bg-hero-pattern bg-cover bg-center bg-no-repeat bg-blend-darken md:bg-fixed">
         <div className="flex h-full items-center justify-center">
-          <div className="mx-auto max-w-full px-4 text-center sm:max-w-3xl sm:px-1">
+          <div className="mx-auto inline-block items-center justify-center px-4 text-center sm:max-w-3xl sm:px-1">
             <h1 className="pb-4 text-2xl font-extrabold text-theme-inverted sm:text-5xl">
               DIGITAL MAKES IT POSSIBLE
             </h1>
