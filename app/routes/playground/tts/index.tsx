@@ -67,7 +67,7 @@ const handleTextToSpeech = async (
     if (speek.length > 200) {
       await speekSentence(
         "gak gitu juga kali. kira-kira aja bro, mentang-mentang gue robot, gak dikasih nafas ngomong gak pake titik koma. kasih tanda baca lah.",
-        lang,
+        "id-ID",
         1,
         0.4,
         1.1,
