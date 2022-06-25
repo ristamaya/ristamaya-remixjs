@@ -177,7 +177,7 @@ export default function Home() {
       <div className="h-fit w-full bg-theme-fill">
         <div className="container mx-auto grid w-full grid-cols-[repeat(auto-fit,minmax(256px,1fr))] gap-x-5 gap-y-5 border-b border-theme-base py-6 text-theme-base">
           <div className="">
-            <h1 className="text-xl font-semibold">RISTAMAYA</h1>
+            <h1 className="text-xl font-semibold">TAMHANA</h1>
             <p className="text-sm">
               Lorem ipsum dolor sit amet. Id sunt adipisci vel eveniet omnis sit porro suscipit eum
             </p>
@@ -189,20 +189,20 @@ export default function Home() {
             </p>
           </div>
           <div className="">
-            <h1 className="text-xl font-semibold">RISTAMAYA</h1>
+            <h1 className="text-xl font-semibold">TAMHANA</h1>
             <p className="text-sm">
               Lorem ipsum dolor sit amet. Id sunt adipisci vel eveniet omnis sit porro suscipit eum
             </p>
           </div>
           <div className="">
-            <h1 className="text-xl font-semibold">RISTAMAYA</h1>
+            <h1 className="text-xl font-semibold">TAMHANA</h1>
             <p className="text-sm">
               Lorem ipsum dolor sit amet. Id sunt adipisci vel eveniet omnis sit porro suscipit eum
             </p>
           </div>
         </div>
         <div className="mt-1 flex justify-center text-xs font-thin text-theme-muted">
-          <h1>Ristamaya 2022</h1>
+          <h1>Tamhana 2022</h1>
         </div>
       </div>
     </>

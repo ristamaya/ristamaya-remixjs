@@ -55,7 +55,7 @@ export const action: ActionFunction = async ({ request }) => {
 
 export const meta: MetaFunction = () => {
   return {
-    title: "Ristamaya | Login",
+    title: "Tamhana | Login",
   };
 };
 

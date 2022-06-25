@@ -4,7 +4,7 @@ import { Input } from "~/components/formcontrol/input";
 
 export const meta: MetaFunction = () => {
   return {
-    title: "Ristamaya | Movies",
+    title: "Tamhana | Movies",
     description: "remix js react react.js react js web development application",
   };
 };

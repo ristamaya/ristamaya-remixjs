@@ -4,7 +4,7 @@ import { getMenusByGroup } from "~/models/setup-menu/menus.server";
 
 export const meta: MetaFunction = () => {
   return {
-    title: "Ristamaya | Setup Menus",
+    title: "Tamhana | Setup Menus",
     description: "remix js react react.js react js web development application",
   };
 };

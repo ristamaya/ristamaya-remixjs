@@ -8,7 +8,7 @@ import Hiddensidebar from "~/components/hiddensidebar";
 
 export const meta: MetaFunction = () => {
   return {
-    title: "Ristamaya | Playground",
+    title: "Tamhana | Playground",
     description: "remix js react react.js react js web development application",
   };
 };

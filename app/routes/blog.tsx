@@ -4,7 +4,7 @@ import Menubar from "~/components/menubar";
 
 export const meta: MetaFunction = () => {
   return {
-    title: "Ristamaya | Blog",
+    title: "Tamhana | Blog",
     description: "remix js react react.js react js web development application",
   };
 };
@@ -46,11 +46,17 @@ export default function Blog() {
   const menudata = useLoaderData();
   return (
     <div>
-      <div id="Navbar" className="fixed z-10 flex h-16 w-screen items-center bg-theme-fill px-2 shadow-lg">
+      <div
+        id="Navbar"
+        className="fixed z-10 flex h-16 w-screen items-center bg-theme-fill px-2 shadow-lg"
+      >
         <Menubar data={menudata} useIcon={true} />
       </div>
 
-      <div id="MainContent" className="fixed top-16 h-[calc(100%-64px)] w-screen overflow-auto bg-theme-inverted">
+      <div
+        id="MainContent"
+        className="fixed top-16 h-[calc(100%-64px)] w-screen overflow-auto bg-theme-inverted"
+      >
         <Outlet />
       </div>
     </div>
