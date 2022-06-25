@@ -55,9 +55,27 @@ const handleTextToSpeech = async (
   if (synth.speaking) {
     return;
   }
+
+  if (text === "") {
+    await speekSentence("gue kudu ngomong apaan?", lang, 1, 0.4, 1.1, synth);
+    return;
+  }
+
   const splitText = text.split(/[\r?\n,.]/);
 
   for (let speek of splitText) {
+    if (speek.length > 200) {
+      await speekSentence(
+        "gak gitu juga kali. kira-kira aja bro, mentang-mentang gue robot, gak dikasih nafas ngomong gak pake titik koma. kasih tanda baca lah.",
+        lang,
+        1,
+        0.4,
+        1.1,
+        synth
+      );
+      return;
+    }
+
     await speekSentence(speek, lang, volume, pitch, rate, synth);
   }
 };
