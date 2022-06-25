@@ -66,11 +66,11 @@ const handleTextToSpeech = async (
   for (let speek of splitText) {
     if (speek.length > 195) {
       await speekSentence(
-        "kira-kira aja bro, kasih tanda baca lah. mentang-mentang gue robot, ngomong gak dikasih nafas, gak pake titik koma.",
+        "kira-kira aja bro, text emang unlimited, tapi kasih tanda baca lah. mentang-mentang gue robot. ngomong gak dikasih nafas, gak pake titik koma.",
         "id-ID",
         1,
         0.2,
-        1.2,
+        1.1,
         synth
       );
       return;
